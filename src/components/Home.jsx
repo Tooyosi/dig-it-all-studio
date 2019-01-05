@@ -6,6 +6,7 @@ import { Grid, Column, Grid1 } from './Grid';
 import Logo from "../../assets/Logo2.jpg";
 import UpperDiv from "./UpperDiv";
 import LowerDiv from "./LowerDiv";
+import Contact from "./Contact";
 
 
 const Home = () => (
@@ -40,6 +41,9 @@ const Home = () => (
             </NavBackground>
             <Container>
                 < LowerDiv />
+            </Container>
+            <Container>
+                < Contact />
             </Container>
         </Fragment>
 )

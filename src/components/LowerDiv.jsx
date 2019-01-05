@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import { Grid, Column, Grid1 } from './Grid';
+import { Grid, Column } from './Grid';
 
 
 const LowerDivStyle = styled.div`
