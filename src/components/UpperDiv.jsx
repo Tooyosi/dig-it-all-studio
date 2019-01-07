@@ -40,6 +40,7 @@ const UpperDivStyle = styled.div`
         background-color: #077eb8;
         opacity: 0.5;
         transition: 0.3s linear;
+        color: white;
     }
     a:hover{
         opacity:1;
@@ -52,7 +53,7 @@ const UpperDiv = () =>(
         <UpperDivStyle>
            <p className="head">Digitall Media</p>
            <p className="body">We Provide World Class Services To Grow Your Business</p>
-           <a>Click to Get started</a>
+           <a href="#contact">Click to Get started</a>
            <p className="footer">No better time to start than Now..</p>
         </UpperDivStyle>
     </Fragment>

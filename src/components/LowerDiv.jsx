@@ -39,8 +39,8 @@ const HeadingStyle = styled.div`
 
 const LowerDiv = () => (
     <Fragment>
-        <HeadingStyle>
-            <h1 id="head">Our Services</h1>            
+        <HeadingStyle id="head">
+            <h1>Our Services</h1>            
         </HeadingStyle>
         <Grid>
             <Column>

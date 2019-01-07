@@ -6,7 +6,8 @@ import { Grid, Column, Grid1 } from './Grid';
 import Logo from "../../assets/Logo2.jpg";
 import UpperDiv from "./UpperDiv";
 import LowerDiv from "./LowerDiv";
-import Contact from "./Contact";
+import {Form} from "./Contact";
+import Footer from "./Footer";
 
 
 const Home = () => (
@@ -24,9 +25,9 @@ const Home = () => (
                             </label>
                             <div class="menu-content">
                                 <ul>
-                                    <li><a href="#"></a>Home</li>
-                                    <li><a href="#"></a>About</li>
-                                    <li><a href="#"></a>Contact</li>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#head">Our Services</a></li>
+                                    <li><a href="#contact">Contact</a></li>
                                  </ul>
                              </div>
                         </span>
@@ -43,8 +44,9 @@ const Home = () => (
                 < LowerDiv />
             </Container>
             <Container>
-                < Contact />
+                <Form />
             </Container>
+            <Footer />
         </Fragment>
 )
 

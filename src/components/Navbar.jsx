@@ -164,11 +164,16 @@ export const NavbarStyle = styled.div`
         margin: 0 10px;
 
     }
-    
-    .menu-content > ul >li: hover {
-        display: inline;
-        opacity: 1;
-    }    
+    .menu-content > ul >li>a{
+        cursor: pointer;
+        color: #0a0b0c; 
+        opacity: 0.5;
+    }
+
+    .menu-content > ul >li>a:hover {
+        opacity: 1;        
+    }
+
     input#menu {
         display: none;
     }
