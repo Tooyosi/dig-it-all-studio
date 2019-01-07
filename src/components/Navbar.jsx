@@ -97,6 +97,10 @@ export const NavbarStyle = styled.div`
         }
     }
 
+    @media(min-width: 568px){
+        
+    }
+
     @media(width: 640px){
         .collapsible-menu label {
             height: 13vh;

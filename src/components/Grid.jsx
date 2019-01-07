@@ -6,7 +6,7 @@ export const Grid = styled.div`
   grid-template-rows: 50%;
   @media(max-width: 800px) {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 17%;
+    grid-template-rows: 34%;
   }
   @media(max-width: 500px) {
     grid-template-columns: 100%;
@@ -38,11 +38,11 @@ export const Grid2 = styled.div`
   grid-template-rows: 30%;
   @media(max-width: 800px) {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 100%;
+    grid-template-rows: 55%;
   }
   @media(max-width: 500px) {
     grid-template-columns: 96%;
-    grid-template-rows: 100%;
+    grid-template-rows: 55%;
   }
 `;
 
