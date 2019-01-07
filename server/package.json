@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.4",
+    "dotenv": "^6.2.0",
     "nodemailer": "^5.0.0",
     "restify": "^7.4.0",
     "restify-cors-middleware": "^1.1.1"

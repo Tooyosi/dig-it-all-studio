@@ -1,3 +1,4 @@
+require('dotenv').config();
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -46,6 +47,7 @@ const config = {
         new HtmlWebpackPlugin({
           template: 'src/template.html',
         }),
+        new webpack.EnvironmentPlugin(['NODE_ENV', 'IP', 'PORT']),
       ],
 };
 

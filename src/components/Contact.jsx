@@ -58,7 +58,7 @@ export class Form extends Component {
         event.preventDefault()
       axios({
         method: 'post',
-        url: 'http://127.0.0.1:3000/api/email',
+        url: `http://${process.env.PORT}:${process.env.IP}/api/email`,
         data: {
           fields: {
             Name:   this.state.formName,

@@ -3,7 +3,8 @@ var restify = require("restify"),
     nodemailer = require("nodemailer"),
     bodyParser = require("body-parser"),
     corsMiddleware = require("restify-cors-middleware");
-    // app = express();
+    
+    require('dotenv').config();
 //Middleware Cors
 var cors = corsMiddleware({
     preflightMaxAge: 5,
@@ -11,8 +12,6 @@ var cors = corsMiddleware({
     allowHeaders: ['API-Token'],
     exposeHeaders: ['Api-Token-Expiry']
 });
-
-// app.use(bodyParser.urlencoded({extended: true}));
 
 
 // Server
@@ -70,6 +69,6 @@ server.post("/api/email", function create(req, res, next){
     res.send(201, req.params)
 })
 
-server.listen(3000, '127.0.0.1', function(){
-    console.log("app is working")
+server.listen(process.env.PORT, process.env.IP, function(){
+    console.log(`app is working on ${process.env.PORT}`)
 })
