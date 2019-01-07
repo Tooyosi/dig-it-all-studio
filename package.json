@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "heroku-postbuild": "webpack -p"
   },
   "proxy": "http://127.0.0.1:3000",
   "author": "Oluwatoyosi Oyegoke",
