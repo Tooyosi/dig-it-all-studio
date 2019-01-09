@@ -38,30 +38,33 @@ var smtpTransport = nodemailer.createTransport({
 });
 
 server.get("/error", function(req, res){
-    res.json("Mail Not sent");
+    res.send("Mail Not sent");
 })
 
 server.get("/success", function(req, res){
-    res.json("Mail sent! We'll get back to you shortly ");
+    res.send("Mail sent! We'll get back to you shortly ");
 })
-
+var result = {"data": ""};
 server.post("/api/email", function create(req, res, next){
     // console.log(req.params)
     console.log(req.body)
     var mail = {
-        from: req.body.fields.Email,
+        from: req.body.fields.email,
         to: 'tuc0476@gmail.com',
         subject: 'New Mail',
-        html: "name: <br />"+ req.body.fields.Name + "<br /> Message: <br />"+ req.body.fields.Message + "<br />email <br />"+ req.body.fields.Email,
+        html: "name: <br />"+ req.body.fields.name + "<br /> Message: <br />"+ req.body.fields.message + "<br />email <br />"+ req.body.fields.email,
     }
     smtpTransport.sendMail(mail, function(error, response){
         if(error){
-            console.log("Email sending error!");
+            result.data ="An error occured, Please Try Again"
+            console.log(result);
             console.log(error);
-            res.redirect("/error", next)
+            res.send(JSON.stringify(result)); 
         }else{
+            result.data ="Mail sent! We'll get back to you shortly "
+            console.log(result);
             console.log("Success")
-            res.redirect("/success", next)
+            res.send(JSON.stringify(result));                        
         }
         smtpTransport.close();
     });

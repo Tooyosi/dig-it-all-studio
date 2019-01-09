@@ -47,31 +47,36 @@ export class Form extends Component {
           formEmail: '',
           formSubject: '',
           formMessage: '', 
+          successMessage: ''
       };
       this.sendMail = this.sendMail.bind(this);
       this.inputName = this.inputName.bind(this);
       this.inputEmail = this.inputEmail.bind(this);
       this.inputSubject = this.inputSubject.bind(this);
       this.inputMessage = this.inputMessage.bind(this);
+      this.buttonClick = this.buttonClick.bind(this);
+      this.successOutput = this.successOutput.bind(this);
     }
     sendMail(event) {
         event.preventDefault()
       axios({
         method: 'post',
-        url: `http://${process.env.PORT}:${process.env.IP}/api/email`,
+        url: `http://localhost:3000/api/email`,
         data: {
           fields: {
-            Name:   this.state.formName,
-            Email: this.state.formEmail,
-            Subject: this.state.formSubject,
-            Message: this.state.formMessage,
+            name:   this.state.formName,
+            email: this.state.formEmail,
+            subject: this.state.formSubject,
+            message: this.state.formMessage,
           }
         }
       }).then(response => {
         console.log(response);
+        response.json().then((result)=>this.setState({ successMessage: result}))
       }).catch(error => {
         console.log(error);
       });
+      data: new FormData();
     }
     inputName(event) { 
       this.setState({
@@ -92,6 +97,15 @@ export class Form extends Component {
       this.setState({
         formMessage: event.target.value,
       })
+    }
+    successOutput(event) {
+      this.setState({
+        successMessage: "Your Mail Has been sent successfully",
+      })
+      new FormData();
+    }
+    buttonClick(event) {
+      this.successOutput();
     }
     render() {
       return (
@@ -118,7 +132,8 @@ export class Form extends Component {
                 <input onChange={this.inputEmail} type="email" name="email" required placeholder="Email" />
                 <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
                 <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="message"></textarea>
-                <input type="submit" value="Send" />
+                <input type="submit" value="Send" onClick={this.buttonClick} />
+                <p>{this.state.successMessage}</p>
             </Formstyle>
         </Column>
         </ContactStyle>
