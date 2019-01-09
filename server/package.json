@@ -16,5 +16,6 @@
     "nodemailer": "^5.0.0",
     "restify": "^7.4.0",
     "restify-cors-middleware": "^1.1.1"
-  }
+  },
+  "devDependencies": {}
 }
