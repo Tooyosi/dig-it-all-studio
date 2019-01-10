@@ -61,7 +61,7 @@ export class Form extends Component {
         event.preventDefault()
       axios({
         method: 'post',
-        url: `https://dig-it-all.herokuapp.com//api/email`,
+        url: `https://dig-it-all.herokuapp.com/api/email`,
         data: {
           fields: {
             name:   this.state.formName,
