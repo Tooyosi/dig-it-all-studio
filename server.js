@@ -4,7 +4,7 @@ var restify = require("restify"),
     bodyParser = require("body-parser"),
     corsMiddleware = require("restify-cors-middleware");
     
-    require('dotenv').config();
+    // require('dotenv').config();
 //Middleware Cors
 var cors = corsMiddleware({
     preflightMaxAge: 5,

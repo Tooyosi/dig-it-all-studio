@@ -76,7 +76,6 @@ export class Form extends Component {
       }).catch(error => {
         console.log(error);
       });
-      data: new FormData();
     }
     inputName(event) { 
       this.setState({
@@ -99,9 +98,15 @@ export class Form extends Component {
       })
     }
     successOutput(event) {
-      this.setState({
-        successMessage: "Your Mail Has been sent successfully",
-      })
+      if(this.state.formMessage === " "){
+        this.setState({
+        successMessage: " ",
+        })
+      } else{
+        this.setState({
+          successMessage: "Your Mail Has been sent successfully",
+        })
+      }
       new FormData();
     }
     buttonClick(event) {
