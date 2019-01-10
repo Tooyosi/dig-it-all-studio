@@ -47,7 +47,7 @@ const config = {
         new HtmlWebpackPlugin({
           template: 'src/template.html',
         }),
-        new webpack.EnvironmentPlugin(['NODE_ENV', 'IP', 'PORT']),
+        new webpack.EnvironmentPlugin(['NODE_ENV']),
       ],
 };
 
