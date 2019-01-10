@@ -72,6 +72,8 @@ server.post("/api/email", function create(req, res, next){
     res.send(201, req.params)
 })
 
+server.post('/api/messages', connector.listen());
+
 server.listen(process.env.PORT, process.env.IP, function(){
     console.log(`app is working on ${process.env.PORT}`)
 })
