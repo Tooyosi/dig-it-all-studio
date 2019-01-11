@@ -63,12 +63,10 @@ export class Form extends Component {
         method: 'post',
         url: `https://dig-it-all.herokuapp.com/api/email`,
         data: {
-          fields: {
             name:   this.state.formName,
             email: this.state.formEmail,
             subject: this.state.formSubject,
-            message: this.state.formMessage,
-          }
+            message: this.state.formMessage
         }
       }).then(response => {
         console.log(response);
