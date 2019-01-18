@@ -5,7 +5,7 @@ import Cancel from '../../assets/close.png';
 
 export const NavbarStyle = styled.div`
     width: 99.9%;
-    background-color: #F4F4F4;
+    background-color: white;
     padding: 15px 0 40px 0;
     position: fixed;
     z-index: 10;

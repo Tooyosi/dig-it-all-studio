@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import Container from './Container';
 import { Grid5, Column, Grid2 } from './Grid';
+import CarouselPage from './Carosel';
 
 const ContactStyle = styled.div`
     background-color: #EFEFEF;
@@ -102,6 +103,13 @@ const Formstyle = styled.form`
       width: 185px;
     }
   }
+  
+  @media(width:800px ){
+    position: relative;
+    textarea, input{
+      width: 250px;
+    }
+  }
 `;
 
 const QuestionStyle = styled.div`
@@ -120,7 +128,7 @@ const QuestionStyle = styled.div`
   p{
     line-height: 0.5px;
     font-family: serif;
-    font-size: smaller;
+    font-size: small;
   }
   .left{
     float: left;
@@ -140,7 +148,12 @@ const QuestionStyle = styled.div`
   
   @media(max-width:360px ){
     padding: 20px !important;
-    height: 50vh !important;
+    height: 57vh !important;
+    
+  .right{
+    float: left;
+    display: inline-block;
+  }
   }
 `;
 
@@ -269,7 +282,7 @@ export class Form extends Component {
             <Column>
               <h1>TESTIMONIALS</h1>
               <Grid5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+                <CarouselPage />
               </Grid5>
             </Column>
         </Container>
