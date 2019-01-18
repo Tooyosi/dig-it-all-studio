@@ -8,6 +8,7 @@ export const NavbarStyle = styled.div`
     background-color: #F4F4F4;
     padding: 15px 0 40px 0;
     position: fixed;
+    z-index: 10;
     top: 0%;
     height: 7vh;
     box-shadow: 1px 2px 3px #e5e9ea;
@@ -192,8 +193,8 @@ export const NavbarStyle = styled.div`
 
 
 export const NavBackground = styled.div`
-    background-color: grey;
-    background: url(${MarketingBg}) no-repeat center/100%;
+    background: #6132E4 no-repeat center/100%;
+    // background: url(${MarketingBg}) no-repeat center/100%;
     background-size: cover;
     height: 85vh;
     @media(max-width: 780px){

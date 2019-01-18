@@ -1,16 +1,16 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import { Grid, Column, Grid2 } from './Grid';
+import Container from './Container';
+import { Grid5, Column, Grid2 } from './Grid';
 
 const ContactStyle = styled.div`
-    background-color: #477b95;
-    margin: 30px 2px;
-    color: #f6fcfb;
+    background-color: #EFEFEF;
+    margin-top: 0px;
+    text-align: center;
+    color: black;
     padding-top: 30px;
-    box-shadow: 0px 5px 8px 5px #5e869a;
-    h2, h4, p{
-        text-align: center;
+    h1, h4, p{
         font-family: -webkit-pictograph;
     }
     label{
@@ -21,22 +21,136 @@ const ContactStyle = styled.div`
 `;
 
 const Formstyle = styled.form`
-    max-width: 250px;
-	margin: 0 auto;
+    max-width: 100%;
+    background-color: white;
+    padding: 40px 0 70px 0;
+    box-shadow: 0px 4px 8px 2px #DEDEDE; 
+    position: relative;
+    z-index: 5;   
     input{
-        margin: 5px;
-        border: 1px solid #afc3af;
-        border-radius: 8px;
-        padding: 6px;
-        width: 250px;
+      margin: 5px;
+      border: 0px solid transparent;
+      // border-bottom: 1px solid #FFFFFF;
+      border-radius: 2px;
+      padding: 6px;
+      height: 5vh;
+      background-color: #EFEFEF;
+      width: 350px;
+      color: white;
     }
+
+    input:focus{
+      border-color: transparent;
+
+    }
+    ::placeholder { 
+      color: white;
+      opacity: 1; 
+    }
+
     textarea{
-        margin: 5px;
-        border: 1px solid #afc3af;
-        border-radius: 8px;
-        padding: 6px;
-        width: 250px;
+      margin: 5px;
+      border: 0px solid transparent;
+      border-radius: 2px;
+      padding: 6px;
+      background-color: #EFEFEF;
+      width: 350px;
+      height: 15vh;
     }
+    input[type="submit"]{
+      padding: 10px 30px;
+      text-align: center;
+      border: 2px solid transparent;
+      border-radius: 22px;
+      cursor: pointer;
+      font-size: x-small;
+      background-color: #6132E4;
+      transition: 0.3s linear;
+      color: white;
+      margin-right: 70px;
+      width: 130px;
+      margin-bottom: 70px;
+      float: right;
+    }
+  
+    @media(width:640px ){
+      position: relative !important
+      z-index: 5;
+      textarea, input{
+        width: 185px;
+      }
+    }
+
+    @media(width:768px ){
+      position: relative !important
+      z-index: 5;
+      textarea, input{
+        width: 185px;
+      }
+    }
+
+    @media(width:600px ){
+      position: relative !important
+      z-index: 5;
+      textarea, input{
+        width: 185px;
+      }
+    }
+  @media(max-width:780px ){
+    position: inherit;
+    textarea, input{
+      width: 185px;
+    }
+  }
+`;
+
+const QuestionStyle = styled.div`
+  background-color: white;
+  position: relative;
+  left: 95%;
+  z-index: 2;
+  bottom: 45vh;
+  box-shadow: 0px 4px 8px 2px #DEDEDE; 
+  height: 40vh;
+  width: 100%;
+  padding: 20px 50px;
+
+  text-align: left;
+
+  p{
+    line-height: 0.5px;
+    font-family: serif;
+    font-size: smaller;
+  }
+  .left{
+    float: left;
+    display: inline-block;
+  }
+  .left-2{
+    display: inline-block;
+  }
+  .right{
+    float: right;
+    display: inline-block;
+  }
+
+  @media(max-width:500px ){
+    position: inherit;
+  }
+  
+  @media(max-width:360px ){
+    padding: 20px !important;
+    height: 50vh !important;
+  }
+`;
+
+const LastDivStyle = styled.div`
+  background-color: #54EEA9;
+  margin-top: -13em;
+
+  @media(max-width: 700px){
+    margin-top: 0px !important;
+  }
 `;
 
 export class Form extends Component {
@@ -71,7 +185,8 @@ export class Form extends Component {
       }).then(response => {
         console.log(response);
         response.json().then((result)=>this.setState({ successMessage: result}))
-      }).catch(error => {
+      }).then(data => {if(data.status ===200) return alert("sent")} )
+      .catch(error => {
         console.log(error);
       });
     }
@@ -115,31 +230,51 @@ export class Form extends Component {
           
     <Fragment>
     <ContactStyle>
-        <h2 id="contact">Get In Touch</h2>
+      <Container>
+          <h2>LETS TAKE YOU TEN STEPS AHEAD</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam</p>
         <Grid2>
-            <Column>
-                <h4>Visit our office at</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur
-                adipiscing elit, sed do eiusmod tempor incididunt ut
-                labore et dolore magna aliqua. Ut enim ad minim veniam</p>
-            </Column>
-            <Column>
-                <h4>Give Us a Call on</h4>
-                <p>01-999-digitall</p>
-            </Column>
+          <Column>
+              <Formstyle onSubmit={this.sendMail}>   
+                  <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)" />
+                  <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email" />
+                  <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
+                  <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="Message(required)"></textarea>
+                  <input type="submit" value="Send" onClick={this.buttonClick} />
+                  <p>{this.state.successMessage}</p>
+              </Formstyle>
+              <QuestionStyle>
+                <h4>Questions?</h4>
+                <p>We would love to hear from you</p>
+                <div className="left">
+                  <h5>Phone</h5>
+                  <p>01-999-digitall</p>
+                </div>
+                <div className="right">
+                  <h5>Email</h5>
+                  <p>hello@digitall.com</p>
+                </div>
+                <div className="left-2">
+                  <h5>Address</h5>
+                  <p>Lorem ipsum dolor sit amet. NG</p>                      
+                </div>
+              </QuestionStyle>
+          </Column>
         </Grid2>
-        <Column>
-            <h4>Send us a Mail</h4>
-            <Formstyle onSubmit={this.sendMail}>
-                <input onChange={this.inputName} type="text" name="name" required placeholder="Your name" />
-                <input onChange={this.inputEmail} type="email" name="email" required placeholder="Email" />
-                <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
-                <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="message"></textarea>
-                <input type="submit" value="Send" onClick={this.buttonClick} />
-                <p>{this.state.successMessage}</p>
-            </Formstyle>
-        </Column>
-        </ContactStyle>
+      </Container>
+      <LastDivStyle>
+        <Container>
+            <Column>
+              <h1>TESTIMONIALS</h1>
+              <Grid5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+              </Grid5>
+            </Column>
+        </Container>
+      </LastDivStyle>
+    </ContactStyle>
     </Fragment>
       );
     }

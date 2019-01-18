@@ -6,6 +6,7 @@ import { Grid, Column, Grid1 } from './Grid';
 import Logo from "../../assets/Logo2.jpg";
 import UpperDiv from "./UpperDiv";
 import LowerDiv from "./LowerDiv";
+import QuoteDiv from "./Quote";
 import {Form} from "./Contact";
 import Footer from "./Footer";
 
@@ -32,20 +33,13 @@ const Home = () => (
                              </div>
                         </span>
                 </NavbarStyle>
-                <Container>
-                    <Grid1>
-                        <Column>
-                        <UpperDiv />
-                        </Column>
-                    </Grid1>
-                </Container>
+                <UpperDiv />
             </NavBackground>
             <Container>
                 < LowerDiv />
             </Container>
-            <Container>
-                <Form />
-            </Container>
+            <QuoteDiv />
+            <Form />
             <Footer />
         </Fragment>
 )

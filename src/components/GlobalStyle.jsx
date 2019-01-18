@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-brand-1: #c6430b;
   }
   body{
-    margin: 0;
+    margin: 0 2px;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
   }
