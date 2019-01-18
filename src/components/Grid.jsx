@@ -82,7 +82,7 @@ export const Grid4 = styled.div`
 
 export const Grid6 = styled.div`
   display: inline-grid;
-  grid-template-columns: 180% 70% ;
+  grid-template-columns: 70% 70% ;
   grid-template-rows: 30%;
   @media(max-width: 800px) {
     grid-template-columns: 50% 50%;

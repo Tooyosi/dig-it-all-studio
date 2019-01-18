@@ -55,6 +55,16 @@ const UpperDivStyle = styled.div`
     .contact{
         background-color: #79A73F;
     }
+    @media(max-width: 600px){
+        a{
+            margin-right: 20px;
+        }
+    }
+    @media(max-width: 360px){
+        a{
+            padding: 5px 15px;
+        }
+    }
 `;
 
 const UpperDiv = () =>(
