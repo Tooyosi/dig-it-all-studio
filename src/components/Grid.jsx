@@ -42,7 +42,7 @@ export const Grid2 = styled.div`
   }
   @media(max-width: 500px) {
     grid-template-columns: 96%;
-    grid-template-rows: 55%;
+    grid-template-rows: 65%;
   }
 `;
 

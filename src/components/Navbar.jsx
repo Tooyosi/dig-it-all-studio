@@ -69,7 +69,7 @@ export const NavbarStyle = styled.div`
         /* Toggle Effect */
         input:checked ~ .menu-content {
             max-height: 100%;
-            background-color: #F4F4F4;
+            background-color: white;
             width: 100vh;
             position: relative;
             left: -5%;
@@ -131,40 +131,41 @@ export const NavbarStyle = styled.div`
         color: black;
         margin-top: 1px;
         position: relative;
+
     }
     @media(min-width:855px){
         .menu-content ul{
-            left: 152vh;
+            left: 80vh;
         }  
     }
     
     @media(width:768px){
         .menu-content ul{
-            left: 40vh;
+            left: 86vh;
         }  
     }
 
     @media(width:1440px){
         .menu-content ul{
-            left: 112vh;
+            left: 86vh;
         }  
     }
 
     @media(width:1024px){
         .menu-content ul{
-            left: 46vh;
+            left: 86vh;
         }  
     }
 
     @media(width:1280px){
         .menu-content ul{
-            left: 102vh;
+            left: 70vh;
         }  
     }
 
     @media(width:800px){
         .menu-content ul{
-            left: 36vh;
+            left: 86vh;
         }  
     }
     .menu-content > ul >li {
@@ -229,8 +230,11 @@ export const Navbar = () => (
                 <div class="menu-content">
                     <ul>
                         <li><Link to="/">Home</Link></li>
-                        <li><Link to="/contact">Our Services</Link></li>
-                        <li><Link to="/">Contact</Link></li>
+                        <li><Link to="/services">Our Services</Link></li>
+                        <li><Link to="/about">About Us</Link></li>
+                        <li><Link to="/">Projects</Link></li>
+                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link to="/">Blog</Link></li>
                      </ul>
                  </div>
             </span>

@@ -138,6 +138,11 @@ const UpperDivStyle = styled.div`
   .second-h2{
       margin-top: 45px;
   }
+  @media(max-width: 650px){
+    .second-h2{
+        margin-top: -10px;
+    }
+  }
 `;
 
 const LowerDivStyle = styled.div`
@@ -157,7 +162,8 @@ const LowerDivStyle = styled.div`
 
   p{
     position: relative;
-    bottom: 25%;
+    bottom: 15vh;
+    font-size: 20px;
     color: white;
   }
 
