@@ -1,16 +1,20 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+import Google from "../../assets/Googlemap-600x551.jpg";
+import Hands from "../../assets/hands.jpg";
+import Computer from "../../assets/computer.jpeg";
+import Footer from "./Footer";
 import Container from './Container';
-import { Grid5, Column, Grid2 } from './Grid';
-import CarouselPage from './Carosel';
+import { NavbarStyle, NavBackground, Navbar } from './Navbar';
+import { Grid2, Column, Grid } from './Grid';
+
 
 const ContactStyle = styled.div`
-    background-color: #EFEFEF;
+    background-color: white;
     margin-top: 0px;
-    text-align: center;
+    text-align: left;
     color: black;
-    padding-top: 30px;
+    padding: 30px;
     h1, h4, p{
         font-family: -webkit-pictograph;
     }
@@ -18,15 +22,22 @@ const ContactStyle = styled.div`
         padding: 10px;
         text-align: right;
     }
+    img{
+        width: 295px;
+        height: 310px;
+    }
     
 `;
 
 const Formstyle = styled.form`
-    max-width: 100%;
+    min-width: 100%;
     background-color: white;
-    padding: 40px 0 70px 0;
-    box-shadow: 0px 4px 8px 2px #DEDEDE; 
+    padding: 40px 40px 76px 40px;
+    border: 2px dotted black;
+    box-shadow: 0px 4px 8px 2px #DEDEDE;
     position: relative;
+    text-align: left;
+    /* padding: 24px; */
     z-index: 5;   
     input{
       margin: 5px;
@@ -112,72 +123,72 @@ const Formstyle = styled.form`
   }
 `;
 
-const QuestionStyle = styled.div`
-  background-color: white;
-  position: relative;
-  left: 95%;
-  z-index: 2;
-  bottom: 45vh;
-  box-shadow: 0px 4px 8px 2px #DEDEDE; 
-  min-height: 40vh;
-  width: 100%;
-  padding: 20px 50px;
-
-  text-align: left;
-
-  p{
-    line-height: 0.5px;
-    font-family: serif;
-    font-size: small;
-  }
-  .left{
-    float: left;
-    display: inline-block;
-  }
-  .left-2{
-    display: inline-block;
-  }
-  .right{
-    float: right;
-    display: inline-block;
-  }
-
-  @media(max-width:500px ){
-    position: inherit;
+const UpperDivStyle = styled.div`
+  background-color: #890CA1;
+  min-height: 50vh;
+  margin-top: 50px;
+  color: white;
+  hr{
+        background-color: #FD745E;
+        padding: 1.5px;
+        border: 2px solid transparent;
+        border-radius: 10px;
   }
   
-  @media(max-width:360px ){
-    padding: 20px !important;
-    height: 57vh !important;
-    
-  .right{
-    float: left;
-    display: inline-block;
-  }
-  }
-
-  @media(width: 568px){
-    bottom: 91vh;
-    p{
-      line-height: 13px;
-    }
+  .second-h2{
+      margin-top: 45px;
   }
 `;
 
-const LastDivStyle = styled.div`
-  background-color: #54EEA9;
-  margin-top: -13em;
-
-  @media(max-width: 700px){
-    margin-top: 0px !important;
+const LowerDivStyle = styled.div`
+  background-color: #32DEE4;
+  min-height: 20vh;
+  padding: 30px;
+  text-align: center;
+  h1{
+    text-align: -webkit-center;
   }
+  
+  img{
+    width: 90%;
+    height: 310px;
+    margin: 20px;
+  }
+
+  p{
+    position: relative;
+    bottom: 25%;
+    color: white;
+  }
+
+  a{
+    padding: 10px 30px;
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: x-small;
+    background-color: #077eb8;
+    transition: 0.3s linear;
+    color: white;
+    background-color: #FF765D;
+    margin-right: 70px;
+   }
+
+  @media(max-width: 600px){
+      img{
+          width: 100%;
+      }
+  }
+
 `;
 
-export class Form extends Component {
+
+class ContactPage extends Component {
     constructor() {
       super();
-      this.state = {
-          formName: '',
+      this.state = { 
+          formName: '', 
           formEmail: '',
           formSubject: '',
           formMessage: '', 
@@ -249,15 +260,28 @@ export class Form extends Component {
       return (
           
     <Fragment>
+    <Navbar/>
+    <UpperDivStyle>
+        <Container>
+            <Grid2>
+                <Column>
+                    <h2>CONTACT US</h2>
+                </Column>
+                <Column>
+                    <h2 className="second-h2">GOOD NEWS! WE CAN HELP YOU GROW YOUR BUSINESS OR CAREER</h2>
+                    <hr/>
+                    <p>WE ARE ON A MISSION TO ACHIEVE REAL SUCCESS</p>
+                </Column>
+            </Grid2>
+        </Container>
+    </UpperDivStyle>
     <ContactStyle>
       <Container>
-          <h2>LETS TAKE YOU TEN STEPS AHEAD</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam</p>
         <Grid2>
           <Column>
-              <Formstyle onSubmit={this.sendMail}>   
+              <Formstyle onSubmit={this.sendMail}> 
+                  <h3>How Can We Help You?</h3>
+                  <p>Do you have a question or are you interested in working with us? Just fill out the form field below.</p>  
                   <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)" />
                   <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email" />
                   <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
@@ -265,39 +289,45 @@ export class Form extends Component {
                   <input type="submit" value="Send" onClick={this.buttonClick} />
                   <p>{this.state.successMessage}</p>
               </Formstyle>
-              <QuestionStyle>
-                <h4>Questions?</h4>
-                <p>We would love to hear from you</p>
-                <div className="left">
-                  <h5>Phone</h5>
-                  <p>01-999-digitall</p>
-                </div>
-                <div className="right">
-                  <h5>Email</h5>
-                  <p>hello@digitall.com</p>
-                </div>
-                <div className="left-2">
-                  <h5>Address</h5>
-                  <p>Lorem ipsum dolor sit amet. NG</p>                      
-                </div>
-              </QuestionStyle>
+          </Column>
+          <Column>
+            <img src={Google} alt=""/>
           </Column>
         </Grid2>
-      </Container>
-      <LastDivStyle>
-        <Container>
+        <Grid2>
             <Column>
-              <h1>TESTIMONIALS</h1>
-              <Grid5>
-                <CarouselPage />
-              </Grid5>
+                <h3>Our Office</h3>
+                <p>72B Lagos Way, Digitall Estate, Ikoyi, Lagos Nigeria.</p>
             </Column>
-        </Container>
-      </LastDivStyle>
+            <Column>
+                <h3>Call Us On</h3>
+                <p>+234-01-999-digitall</p>
+            </Column>
+        </Grid2>
+      </Container>
     </ContactStyle>
+    <LowerDivStyle>
+        <Container>
+            <h1>We've hand picked some case studies we think you'll like:</h1>
+            <Grid2>
+                <Column>
+                    <img src={Computer} alt=""/>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit</p>
+                </Column>
+                <Column>
+                    <img src={Hands} alt=""/>
+                    <p>Lorem ipsum dolor sit amet, consectetur
+                        adipiscing elit</p>
+                </Column>
+            </Grid2>
+            <a href="">READ MORE</a>
+        </Container>
+    </LowerDivStyle>
+    <Footer />
     </Fragment>
       );
     }
   } 
 
-
+  export default ContactPage;

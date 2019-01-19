@@ -1,5 +1,8 @@
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import MarketingBg from '../../assets/marketing.jpg';
+import Logo from "../../assets/Logo2.jpg";
 import Burger from '../../assets/menu.png';
 import Cancel from '../../assets/close.png';
 
@@ -34,13 +37,13 @@ export const NavbarStyle = styled.div`
         }
         .collapsible-menu label {
             font-family: 'Sedgwick Ave Display', cursive;
-            height: 6.2vh;
+            min-height: 6.2vh;
             width: 5px;
             font-size: 56px;
             display: block;
             position: absolute;
             left: 10%;
-            top: 20%;
+            top: 1%;
             cursor: pointer;
             background-size: 35px 50px;
             margin-left: 70%;
@@ -211,3 +214,26 @@ export const NavBrand = styled.div`
         display: inline;
     }
 `;
+
+export const Navbar = () => (
+    <Fragment>
+        <NavbarStyle className="nav-style">
+            <span class="collapsible-menu">
+                <img className="nav-brand" src={Logo} />
+                <input type="checkbox" id="menu" />
+                <label for="menu">
+                    <span className='icon-bar'></span>
+                    <span className='icon-bar'></span>
+                    <span className='icon-bar'></span>
+                </label>
+                <div class="menu-content">
+                    <ul>
+                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/contact">Our Services</Link></li>
+                        <li><Link to="/">Contact</Link></li>
+                     </ul>
+                 </div>
+            </span>
+        </NavbarStyle>
+    </Fragment>
+)
