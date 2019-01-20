@@ -18,8 +18,8 @@ const ServicesDiv = styled.div`
 `; 
 
 const LowerDivStyle = styled.div`
-    margin-top: 20px;
-    min-height: 300px;
+    margin: 0px 2% 30% 2%;
+    min-height: 200px;
     padding: 10px;
     background-color: white;
     transition: 0.3s linear;
@@ -57,6 +57,9 @@ const LowerDivStyle = styled.div`
         height: 200px;
         width: 100%;
     }
+    @media(max-width: 600px){
+        margin: 0px 2% 16% 2%;
+    }
 `;
 
 const UpperDivStyle = styled.div`
@@ -71,7 +74,6 @@ const UpperDivStyle = styled.div`
     }
     img{
         width: 80%;
-        height: 20%;
         border: 0px solid transparent;
         border-radius: 45%;    
     }

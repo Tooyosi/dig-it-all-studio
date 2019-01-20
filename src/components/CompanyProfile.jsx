@@ -1,13 +1,14 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import Office from "../../assets/office.jpg";
-import Profile from "../../assets/maxresdefault.jpg";
-import Team from "../../assets/team.jpg";
-import Shake from "../../assets/shake.jpg";
+import SVG from "svg-inline-react";
+import World from "../../assets/world.svg";
+import Project from "../../assets/project.svg";
+import Certificate from "../../assets/certificate.svg";
 import Footer from "./Footer";
 import Container from './Container';
 import { NavbarStyle, NavBackground, Navbar } from './Navbar';
-import { Grid2, Column, Grid7 } from './Grid';
+import { Grid8, Column, Grid7 } from './Grid';
 
 
 const ContactStyle = styled.div`
@@ -23,6 +24,9 @@ const ContactStyle = styled.div`
     label{
         padding: 10px;
         text-align: right;
+    }
+    h2{
+        margin--top: 0;
     }
     
 `;
@@ -123,7 +127,7 @@ const Formstyle = styled.form`
 
 const UpperDivStyle = styled.div`
   background-color: #79A73F;
-  min-height: 50vh;
+//   height: 50vh;
   margin-top: 50px;
   color: white;
   hr{
@@ -144,11 +148,11 @@ const UpperDivStyle = styled.div`
 `;
 
 const LowerDivStyle = styled.div`
-  background-color: #0A0130;
+  background-color: white;
   min-height: 20vh;
   padding: 30px;
-  color: #FE755C;
-  text-align: left;
+  color: black;
+  text-align: center;
   h1{
     text-align: -webkit-center;
   }
@@ -178,31 +182,59 @@ const LowerDivStyle = styled.div`
       }
   }
 
+  .svg-div{
+    border-radius: 100%;
+    border: 3px solid #FF9683;
+  }
+  .svg-inner{
+    border-radius: 100%;
+    margin: 18px;
+    padding: 34px;
+    max-height: 248px;
+    border: 7px solid #BCA9F3;
+  }
+  .svg-inner > p{
+      margin-top: 40px;
+      color: black;
+      text-align: center;
+  }
+
 `;
 
 
-const About = () => (    
+const OurProfile = () => (    
     <Fragment>
     <Navbar/>
     <UpperDivStyle>
         <Container>
-            <Grid2>
                 <Column>
-                    <h2>ABOUT US</h2>
+                    <h2>ABOUT DIG-IT-ALL</h2>
                 </Column>
-                <Column>
-                    <h2 className="second-h2">WHAT WE DO?</h2>
-                    <hr/>
-                    <p>Our mission is to deliver exceptional ROI to our clients. Through metric driven digital
-                        marketing campaigns and beautiful responsive websites
-                    </p>
-                </Column>
-            </Grid2>
         </Container>
     </UpperDivStyle>
     <ContactStyle>
       <Container>
-        <Grid2>
+        <Grid8>
+          <Column>
+            <img src={Office} alt=""/>
+          </Column>
+          <Column>
+            <h2>Company Profile</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam.
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam.
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
+            <p>Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
+          </Column>
           <Column>
             <p>
                 We work with businesses and non profits harness the growing power and market
@@ -223,38 +255,44 @@ const About = () => (
             </p>
           </Column>
           <Column>
-            <img src={Office} alt=""/>
+            <h2>Our Mission</h2>
+            <p>To help businesses suceed through excellent digital services, focused on results</p>
+            <h2>Our Vision</h2>
+            <p>The worlds biggest digital agency</p>
           </Column>
-        </Grid2>
+        </Grid8>
       </Container>
     </ContactStyle>
     <LowerDivStyle>
         <Container>
             <Grid7>
                 <Column>
-                    <h2>COMPANY PROFILE</h2>
-                    <img src={Profile} alt=""/>
-                    <p>Get to know us more. Our Company Profile page contains
-                    our corporate Vision and Mission statements, Key clients and Highlights
-                    </p>
-                    <a href="">Learn More >>></a>
+                    <div className="svg-div">
+                        <div className="svg-inner">
+                            <SVG className="svg" src={Project} />
+                            <p>59</p>
+                        </div>
+                    </div>
+                    <h3>Projects Launched</h3>
                 </Column>
                 <Column>
-                    <h2>OUR TEAM</h2>                
-                    <img src={Team} alt=""/>
-                    <p>Get to know us more. Our Company Profile page contains
-                    our corporate Vision and Mission statements, Key clients and Highlights
-                    </p>
-                    <a href="">Learn More >>></a>
+                    <div className="svg-div">
+                        <div className="svg-inner">
+                            <SVG className="svg" src={Certificate} />
+                            <p>12</p>
+                        </div>
+                    </div>
+                    <h3>Awards</h3>
                 </Column>
                 <Column>
-                    <h2>NEWS</h2>                
-                    <img src={Shake} alt=""/>
-                    <p>Get to know us more. Our Company Profile page contains
-                    our corporate Vision and Mission statements, Key clients and Highlights
-                    </p>
-                    <a href="">Learn More >>></a>
-                </Column>
+                    <div className="svg-div">
+                        <div className="svg-inner">
+                            <SVG className="svg" src={World} />
+                            <p>22</p>
+                        </div>
+                    </div>
+                    <h3>International Projects</h3>
+                 </Column>
             </Grid7>
         </Container>
     </LowerDivStyle>
@@ -262,4 +300,4 @@ const About = () => (
     </Fragment>
 );
 
-  export default About;
+  export default OurProfile;

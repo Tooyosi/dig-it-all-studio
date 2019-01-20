@@ -358,5 +358,4 @@ class ContactPage extends Component {
 
   export default GoogleApiWrapper({
     apiKey: (process.env.API_KEY)
-  })(ContactPage)
-//   export default ;
+  })(ContactPage);

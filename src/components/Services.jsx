@@ -141,7 +141,7 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -10px;
+        margin-top: -34px;
     }
   }
 `;
@@ -152,6 +152,7 @@ const LowerDivStyle = styled.div`
   padding: 30px;
   text-align: center;
   h2{
+    margin-top: 70px;
     font-weight: 100;
     text-align: left;
 }
@@ -174,8 +175,8 @@ const LowerDivStyle = styled.div`
     cursor: pointer;
     background-color: #3513ab;
     transition: 0.3s linear;
+    margin-top: 70px;
     color: white;
-    margin-right: 70px;
 }
 
   @media(max-width: 600px){
