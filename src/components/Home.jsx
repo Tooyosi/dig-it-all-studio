@@ -18,9 +18,7 @@ const Home = () => (
                 <Navbar/>
                 <UpperDiv />
             </NavBackground>
-            <Container>
-                < LowerDiv />
-            </Container>
+            < LowerDiv />
             <QuoteDiv />
             <Form />
             <Footer />

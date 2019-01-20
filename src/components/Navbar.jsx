@@ -2,9 +2,8 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import MarketingBg from '../../assets/marketing.jpg';
-import Logo from "../../assets/Logo2.jpg";
-import Burger from '../../assets/menu.png';
-import Cancel from '../../assets/close.png';
+import SVG from "svg-inline-react";
+import Logo from "../../assets/dig-it-all.svg";
 
 export const NavbarStyle = styled.div`
     width: 99.9%;
@@ -187,9 +186,9 @@ export const NavbarStyle = styled.div`
         display: none;
     }
     .nav-brand{
-        height: 5vh;
+        height: 4vh;
         opacity: 1;
-        width: 140px;
+        width: 120px;
         position: absolute;
         left: 5%;   
     }
@@ -220,7 +219,7 @@ export const Navbar = () => (
     <Fragment>
         <NavbarStyle className="nav-style">
             <span class="collapsible-menu">
-                <img className="nav-brand" src={Logo} />
+                <SVG className="nav-brand" src={Logo} />
                 <input type="checkbox" id="menu" />
                 <label for="menu">
                     <span className='icon-bar'></span>

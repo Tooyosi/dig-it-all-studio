@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import Google from "../../assets/Googlemap-600x551.jpg";
+import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Hands from "../../assets/hands.jpg";
 import Computer from "../../assets/computer.jpeg";
 import Footer from "./Footer";
@@ -28,6 +29,11 @@ const ContactStyle = styled.div`
     }
     
 `;
+
+const MapStyle = {
+    width: '50%',
+    height: '40%'
+  }
 
 const Formstyle = styled.form`
     min-width: 100%;
@@ -186,6 +192,9 @@ const LowerDivStyle = styled.div`
           width: 100%;
       }
   }
+  .map{
+      width: inherit;
+  }
 
 `;
 
@@ -297,7 +306,18 @@ class ContactPage extends Component {
               </Formstyle>
           </Column>
           <Column>
-            <img src={Google} alt=""/>
+            <div className="map">
+              {/* <img src={Google} alt=""/> */}
+              <Map google={this.props.google} zoom={14} style={MapStyle}>
+                  <Marker onClick={this.onMarkerClick}
+                          name={'Current location'} />
+                  <InfoWindow onClose={this.onInfoWindowClose}>
+                      <div>
+                        {/* <h1>{this.state.selectedPlace.name}</h1> */}
+                      </div>
+                  </InfoWindow>
+              </Map>
+            </div>
           </Column>
         </Grid2>
         <Grid2>
@@ -336,4 +356,7 @@ class ContactPage extends Component {
     }
   } 
 
-  export default ContactPage;
+  export default GoogleApiWrapper({
+    apiKey: (process.env.API_KEY)
+  })(ContactPage)
+//   export default ;

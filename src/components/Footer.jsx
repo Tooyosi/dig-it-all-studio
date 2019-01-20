@@ -6,7 +6,8 @@ import {twitter} from 'react-icons-kit/fa/twitter';
 import {youtubePlay} from 'react-icons-kit/fa/youtubePlay';
 import {instagram} from 'react-icons-kit/fa/instagram';
 import {withCircleRight} from 'react-icons-kit/entypo/withCircleRight';
-import Logo from "../../assets/Logo2.jpg";
+import Logo from "../../assets/dig-it-all.svg";
+import SVG from "svg-inline-react";
 import styled from 'styled-components';
 import Container from './Container';
 import { Grid4, Column, Grid6 } from './Grid';
@@ -65,6 +66,9 @@ const UpperFooter = styled.div`
   .right{
     float: right;
   }
+  .logo{
+    color: white;
+  }
 `;
 
 const Footer = () => (
@@ -96,7 +100,10 @@ const Footer = () => (
             <p><a href="#">Advertise</a></p>        
             <p><a href="#">Contact Us</a></p>        
             <p><a href="#">Privacy Statement</a></p>        
-            <p><a href="#">FAQ</a></p>        
+            <p><a href="#">FAQ</a></p> 
+            <span className="logo">
+              <SVG src={Logo} />
+            </span>  
           </Column>
           <Column>
             <h4>Join Us</h4>

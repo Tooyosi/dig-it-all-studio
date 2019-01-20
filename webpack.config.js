@@ -18,6 +18,10 @@ const config = {
                 exclude: /node_modules/
             },
             {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
+            },
+            {
                 test: /\.(png|gif|jpe?g)$/,
                 use: [
                     'file-loader',
