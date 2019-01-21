@@ -43,7 +43,7 @@ export const Grid2 = styled.div`
   }
   @media(max-width: 500px) {
     grid-template-columns: 96%;
-    grid-template-rows: 50%;
+    grid-template-rows: 56%;
   }
 `;
 
@@ -123,3 +123,18 @@ export const Grid8 = styled.div`
     grid-template-rows: 17%;
   }
   `;
+
+  export const Grid9 = styled.div`
+  display: inline-grid;
+  width: 100%;
+  grid-template-columns: 50% 50% ;
+  grid-template-rows: 30%;
+  @media(max-width: 800px) {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 55%;
+  }
+  @media(max-width: 500px) {
+    grid-template-columns: 96%;
+    grid-template-rows: 76%;
+  }
+`;

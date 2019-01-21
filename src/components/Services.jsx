@@ -6,7 +6,7 @@ import CarouselPage from './Carosel';
 import Footer from "./Footer";
 import Container from './Container';
 import { NavbarStyle, NavBackground, Navbar } from './Navbar';
-import { Grid2, Column, Grid, Grid5 } from './Grid';
+import { Grid2, Column, Grid, Grid5, Grid9 } from './Grid';
 
 
 const ContactStyle = styled.div`
@@ -141,7 +141,7 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -34px;
+        margin-top: -70px;
     }
   }
 `;
@@ -221,7 +221,7 @@ const Services = () => (
       <Container>
           <h1>Full Service Digital Marketing Agency</h1>
           <h3>Full Service Digital Marketing Agency</h3>
-        <Grid2>
+        <Grid9>
           <Column>
             <p>
                 We work with businesses and non profits harness the growing power and market
@@ -244,7 +244,7 @@ const Services = () => (
           <Column>
             <SVG src={Office} alt=""/>
           </Column>
-        </Grid2>
+        </Grid9>
       </Container>
     </ContactStyle>
     <LowerDivStyle>
