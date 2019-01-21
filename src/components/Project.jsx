@@ -35,6 +35,16 @@ const ContactStyle = styled.div`
         z-index: 5;
         text-align: left;
     }
+    
+  @media(max-width: 650px){
+    .form-head{
+      position: relative;
+      top: 0;
+      color: black;
+      z-index: 5;
+      text-align: left;
+    }
+  }
 `;
 
 const Formstyle = styled.form`
@@ -152,7 +162,7 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -34px;
+        margin-top: -54px;
     }
   }
 `;
@@ -215,6 +225,8 @@ const Project = () => (
                   {/* <p>{this.state.successMessage}</p> */}
               </Formstyle>            
           </Column>
+          </Grid2>
+          <Grid2>
           <Column>
             <h2>We're are to Help</h2>
             <p>Talk to us and learn how strategic website design and digital marketing can help you
