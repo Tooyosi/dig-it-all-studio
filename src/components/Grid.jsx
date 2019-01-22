@@ -113,7 +113,7 @@ export const Grid7 = styled.div`
 export const Grid8 = styled.div`
   display: inline-grid;
   grid-template-columns: 50% 50% ;
-  grid-template-rows: 30%;
+  grid-template-rows: 70%;
   @media(max-width: 800px) {
     grid-template-columns: 50% 50%;
     grid-template-rows: 55%;

@@ -5,6 +5,7 @@ import ContactPage from './components/ContactPage';
 import About from './components/About';
 import OurProfile from './components/CompanyProfile';
 import Project from './components/Project';
+import Team from './components/Team';
 import GoogleApiWrapper from './components/Services';
 import GlobalStyle from './components/GlobalStyle';
 
@@ -19,6 +20,7 @@ const Routes = () => (
         <Route path="/services" component={GoogleApiWrapper}></Route>
         <Route path="/profile" component={OurProfile}></Route>
         <Route path="/project" component={Project}></Route>
+        <Route path="/team" component={Team}></Route>
       </Switch>
     </Fragment>
   </Router>

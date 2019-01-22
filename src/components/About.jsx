@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Office from "../../assets/office.jpg";
 import Profile from "../../assets/maxresdefault.jpg";
@@ -237,7 +238,7 @@ const About = () => (
                     <p>Get to know us more. Our Company Profile page contains
                     our corporate Vision and Mission statements, Key clients and Highlights
                     </p>
-                    <a href="">Learn More >>></a>
+                    <Link to="/profile">Learn More >>></Link>
                 </Column>
                 <Column>
                     <h2>OUR TEAM</h2>                
@@ -245,7 +246,7 @@ const About = () => (
                     <p>Get to know us more. Our Company Profile page contains
                     our corporate Vision and Mission statements, Key clients and Highlights
                     </p>
-                    <a href="">Learn More >>></a>
+                    <Link to="/team">Learn More >>></Link>
                 </Column>
                 <Column>
                     <h2>NEWS</h2>                
@@ -253,7 +254,7 @@ const About = () => (
                     <p>Get to know us more. Our Company Profile page contains
                     our corporate Vision and Mission statements, Key clients and Highlights
                     </p>
-                    <a href="">Learn More >>></a>
+                    <Link to="/blog">Learn More >>></Link>
                 </Column>
             </Grid7>
         </Container>
