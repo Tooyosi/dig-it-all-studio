@@ -6,6 +6,7 @@ import About from './components/About';
 import OurProfile from './components/CompanyProfile';
 import Project from './components/Project';
 import Team from './components/Team';
+import Blog from './components/Blog';
 import GoogleApiWrapper from './components/Services';
 import GlobalStyle from './components/GlobalStyle';
 
@@ -21,6 +22,7 @@ const Routes = () => (
         <Route path="/profile" component={OurProfile}></Route>
         <Route path="/project" component={Project}></Route>
         <Route path="/team" component={Team}></Route>
+        <Route path="/blog" component={Blog}></Route>
       </Switch>
     </Fragment>
   </Router>

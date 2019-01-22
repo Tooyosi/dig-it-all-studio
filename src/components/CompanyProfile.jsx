@@ -31,100 +31,6 @@ const ContactStyle = styled.div`
     
 `;
 
-const Formstyle = styled.form`
-    min-width: 100%;
-    background-color: white;
-    padding: 40px 40px 76px 40px;
-    border: 2px dotted black;
-    box-shadow: 0px 4px 8px 2px #DEDEDE;
-    position: relative;
-    text-align: left;
-    /* padding: 24px; */
-    z-index: 5;   
-    input{
-      margin: 5px;
-      border: 0px solid transparent;
-      // border-bottom: 1px solid #FFFFFF;
-      border-radius: 2px;
-      padding: 6px;
-      height: 5vh;
-      background-color: #EFEFEF;
-      width: 350px;
-      color: white;
-    }
-
-    input:focus{
-      border-color: transparent;
-
-    }
-    ::placeholder { 
-      color: white;
-      opacity: 1; 
-    }
-
-    textarea{
-      margin: 5px;
-      border: 0px solid transparent;
-      border-radius: 2px;
-      padding: 6px;
-      background-color: #EFEFEF;
-      width: 350px;
-      height: 15vh;
-    }
-    input[type="submit"]{
-      padding: 10px 30px;
-      text-align: center;
-      border: 2px solid transparent;
-      border-radius: 22px;
-      cursor: pointer;
-      font-size: x-small;
-      background-color: #6132E4;
-      transition: 0.3s linear;
-      color: white;
-      margin-right: 70px;
-      width: 130px;
-      margin-bottom: 70px;
-      float: right;
-    }
-  
-    @media(width:640px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-
-    @media(width:768px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-
-    @media(width:600px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-  @media(max-width:780px ){
-    position: inherit;
-    textarea, input{
-      width: 185px;
-    }
-  }
-  
-  @media(width:800px ){
-    position: relative;
-    textarea, input{
-      width: 250px;
-    }
-  }
-`;
-
 const UpperDivStyle = styled.div`
   background-color: #79A73F;
 //   height: 50vh;
@@ -197,6 +103,7 @@ const LowerDivStyle = styled.div`
       margin-top: 40px;
       color: black;
       text-align: center;
+      font-weight: bold;
   }
 
 `;

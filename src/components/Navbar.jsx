@@ -134,13 +134,13 @@ export const NavbarStyle = styled.div`
     }
     @media(min-width:855px){
         .menu-content ul{
-            left: 80vh;
+            left: 33vh;
         }  
     }
     
     @media(width:768px){
         .menu-content ul{
-            left: 86vh;
+            left: 19vh;
         }  
     }
 
@@ -150,11 +150,7 @@ export const NavbarStyle = styled.div`
         }  
     }
 
-    @media(width:1024px){
-        .menu-content ul{
-            left: 86vh;
-        }  
-    }
+    
 
     @media(width:1280px){
         .menu-content ul{
@@ -233,7 +229,7 @@ export const Navbar = () => (
                         <li><Link to="/about">About Us</Link></li>
                         <li><Link to="/project">Projects</Link></li>
                         <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/">Blog</Link></li>
+                        <li><Link to="/blog">Blog</Link></li>
                      </ul>
                  </div>
             </span>
