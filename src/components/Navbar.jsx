@@ -100,8 +100,10 @@ export const NavbarStyle = styled.div`
         }
     }
 
-    @media(min-width: 568px){
-        
+    @media(width: 1024px){
+        .menu-content ul{
+            left: 33vh !important;
+        }
     }
 
     @media(width: 640px){
@@ -132,7 +134,13 @@ export const NavbarStyle = styled.div`
         position: relative;
 
     }
-    @media(min-width:855px){
+
+    @media(min-width:1000px){
+        .menu-content ul{
+            left: 70vh;
+        }  
+    }
+    @media(max-width:855px){
         .menu-content ul{
             left: 33vh;
         }  

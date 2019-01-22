@@ -56,7 +56,7 @@ const QuoteDiv = () => (
         <CallDivStyle>
             <h2>Call Now 01-999-digitall</h2>
             <p>or</p>
-            <p><a href="" className="advice">Get a free Advice</a></p>
+            <p><a href="/contact" className="advice">Get a free Advice</a></p>
         </CallDivStyle>
     </Fragment>
 )

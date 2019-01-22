@@ -297,7 +297,7 @@ const Services = () => (
                     even past customers.</p>
                 </Column>
             </Grid>
-            <a href="">Free Consultation</a>
+            <a href="/contact">Free Consultation</a>
         </Container>
     </LowerDivStyle>
     <LowerDivStyle2>
