@@ -15,6 +15,15 @@ const QuoteDivStyle = styled.div`
         margin-top: 0;
         font-family: serif;
     }
+    a{
+        padding: 10px 30px;
+        border: 2px solid transparent;
+        border-radius: 22px;
+        cursor: pointer;
+        font-size: small;
+        background-color: #262626;
+        color: white;
+    }
 `;
 
 const CallDivStyle = styled.div`
@@ -51,6 +60,7 @@ const QuoteDiv = () => (
                     social media can be used to join the conversation with your target audience and
                     promote your brand.</p>
                 </Grid3>            
+                <a href="">Request a Quote</a>
             </Container>
         </QuoteDivStyle>
         <CallDivStyle>

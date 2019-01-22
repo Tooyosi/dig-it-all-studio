@@ -142,7 +142,13 @@ export const NavbarStyle = styled.div`
     }
     @media(max-width:855px){
         .menu-content ul{
-            left: 33vh;
+            left: 16vh;
+        }  
+    }
+
+    @media(max-width:500px){
+        .menu-content ul{
+            left: -1vh;
         }  
     }
     
@@ -166,11 +172,6 @@ export const NavbarStyle = styled.div`
         }  
     }
 
-    @media(width:800px){
-        .menu-content ul{
-            left: 86vh;
-        }  
-    }
     .menu-content > ul >li {
         display: inline;
         margin: 0 10px;
