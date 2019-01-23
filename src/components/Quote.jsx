@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import Quote from "../../assets/Quote.png";
+import Quote from "../../assets/quote.png";
 import Container from './Container';
 import { Grid2, Column } from './Grid';
 
