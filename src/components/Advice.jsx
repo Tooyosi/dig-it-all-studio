@@ -1,10 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Office from "../../assets/office.jpg";
-import Profile from "../../assets/maxresdefault.jpg";
-import Team from "../../assets/team.jpg";
-import Shake from "../../assets/shake.jpg";
 import Footer from "./Footer";
 import Container from './Container';
 import { NavbarStyle, NavBackground, Navbar } from './Navbar';
