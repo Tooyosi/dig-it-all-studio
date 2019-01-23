@@ -1,5 +1,12 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
+import SVG from "svg-inline-react";
+import Email from "../../assets/email1.svg";
+import Social from "../../assets/socialMedia.svg";
+import Report from "../../assets/report1.svg";
+import Manager from "../../assets/manager.svg";
+import Web from "../../assets/digital-campaign.svg";
+import Share from "../../assets/share.svg";
 import Woman from "../../assets/Blacknerdwoman.png";
 import Container from './Container';
 import { Grid, Grid2, Column } from './Grid';
@@ -60,6 +67,13 @@ const LowerDivStyle = styled.div`
     @media(max-width: 600px){
         margin: 0px 2% 16% 2%;
     }
+
+    .svg{
+        margin: 0 130px 0 1px;
+        padding: 14px;
+        border-radius: 70px;
+        border: 2px solid #FF927E;
+    }
 `;
 
 const UpperDivStyle = styled.div`
@@ -118,6 +132,9 @@ const LowerDiv = () => (
                 <Grid>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Social} />
+                        </div>
                         <h2>Social Media Marketing</h2>
                         <p>Social media has been utilized to create amazing marketing masterpieces.
                         Large corporations have successfully employed social media to increase their sales,
@@ -129,6 +146,9 @@ const LowerDiv = () => (
                 </Column>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Email} />
+                        </div>
                         <h2>Email Marketing</h2>
                         <p>In the process of running your business, winning new customers is as important
                         as nurturing the relationship with the clients you already have. Email marketing is 
@@ -138,6 +158,9 @@ const LowerDiv = () => (
                 </Column>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Report} />
+                        </div>
                         <h2>SEO and SEM</h2>
                         <p>We help make the adjustment to your web pages, content and promote the
                         content to help improve your visibility in organic search engine results. 
@@ -148,6 +171,9 @@ const LowerDiv = () => (
                 </Column>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Web} />
+                        </div>
                         <h2>Digital Marketing</h2>
                         <p>Getting your business online is not an afterthought in business, 
                         it is both foundational and catalytic to your business success. 
@@ -157,6 +183,9 @@ const LowerDiv = () => (
                 </Column>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Manager} />
+                        </div>
                         <h2>Consultation and Advisory Services</h2>
                         <p>Our dream is to be your trusted digital advisor and strategic partner. 
                         It is our pleasure to offer you professional advice and expert opinion that 
@@ -166,6 +195,9 @@ const LowerDiv = () => (
                 </Column>
                 <Column>
                     <LowerDivStyle>
+                        <div className="svg" >
+                            <SVG src={Share} />
+                        </div>
                         <h2>Content Creation and Strategy</h2>
                         <p>Being an essential component of an effective inbound strategy and 
                         the message your brand delivers, we help create and leverage personalized 

@@ -42,6 +42,15 @@ const ContactStyle = styled.div`
         margin-top: 50px;
     }
     
+    @media( max-width: 700px){
+        .plaq{
+            height: 200px;
+        }
+        
+        .plaq{
+            margin-top: 0px;
+        }
+    }
 `;
 
 const BannerStyle = styled.div`
@@ -107,42 +116,6 @@ const UpperDivStyle = styled.div`
   }
 `;
 
-const LowerDivStyle = styled.div`
-  background-color: #0A0130;
-  min-height: 20vh;
-  padding: 30px;
-  color: #FE755C;
-  text-align: left;
-  h1{
-    text-align: -webkit-center;
-  }
-  
-  img{
-    height: 250px;
-    // margin: 20px;
-  }
-
-  p{
-    text-align: left;
-    // margin: 20px;
-    color: white;
-  }
-
-  a{
-    text-align: left;
-    cursor: pointer;
-    font-size: x-small;
-    transition: 0.3s linear;
-    color: #FF765D;
-   }
-
-  @media(max-width: 600px){
-      img{
-          width: 100%;
-      }
-  }
-
-`;
 
 
 const Blog = () => (    

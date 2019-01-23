@@ -6,7 +6,7 @@ import {twitter} from 'react-icons-kit/fa/twitter';
 import {youtubePlay} from 'react-icons-kit/fa/youtubePlay';
 import {instagram} from 'react-icons-kit/fa/instagram';
 import {withCircleRight} from 'react-icons-kit/entypo/withCircleRight';
-import Logo from "../../assets/dig-it-all.svg";
+import Logo from "../../assets/white-background.svg";
 import SVG from "svg-inline-react";
 import styled from 'styled-components';
 import Container from './Container';

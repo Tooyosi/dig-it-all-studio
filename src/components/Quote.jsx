@@ -1,7 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
+import Quote from "../../assets/Quote.png";
 import Container from './Container';
-import { Grid3, Column } from './Grid';
+import { Grid2, Column } from './Grid';
 
 const QuoteDivStyle = styled.div`
     background-color: #EED5D5;
@@ -51,22 +52,27 @@ const QuoteDiv = () => (
     <Fragment>
         <QuoteDivStyle>
             <Container>
-                <Grid3>
-                    <h2>WE DRIVE THE ATTENTION TO YOU</h2>
-                    <p>Social media has been utilized to create amazing marketing masterpieces.
-                    Large corporations have successfully employed social media to increase their sales,
-                    brand, and the community around their products. Small businesses have also
-                    used social media to increase their sales as well.No matter your company size, 
-                    social media can be used to join the conversation with your target audience and
-                    promote your brand.</p>
-                </Grid3>            
+                <Grid2>
+                    <Column>
+                        <h2>WE DRIVE THE ATTENTION TO YOU</h2>
+                        <p>Social media has been utilized to create amazing marketing masterpieces.
+                        Large corporations have successfully employed social media to increase their sales,
+                        brand, and the community around their products. Small businesses have also
+                        used social media to increase their sales as well.No matter your company size, 
+                        social media can be used to join the conversation with your target audience and
+                        promote your brand.</p>
+                    </Column>
+                    <Column>
+                        <img src={Quote} alt=""/>
+                    </Column>
+                </Grid2>            
                 <a href="">Request a Quote</a>
             </Container>
         </QuoteDivStyle>
         <CallDivStyle>
             <h2>Call Now 01-999-digitall</h2>
             <p>or</p>
-            <p><a href="/contact" className="advice">Get a free Advice</a></p>
+            <p><a href="/advice" className="advice">Get a free Advice</a></p>
         </CallDivStyle>
     </Fragment>
 )

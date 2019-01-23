@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import MarketingBg from '../../assets/marketing.jpg';
+import Home from '../../assets/Homepage.png';
 import SVG from "svg-inline-react";
 import Logo from "../../assets/dig-it-all.svg";
 
@@ -201,8 +201,10 @@ export const NavbarStyle = styled.div`
 
 
 export const NavBackground = styled.div`
-    background: #6132E4 no-repeat center/100%;
-    // background: url(${MarketingBg}) no-repeat center/100%;
+    // background: #6132E4 no-repeat center/100%;
+    background: linear-gradient(rgba(103, 60, 203, .7), rgba(103, 60, 203, .7)), url(${Home});
+    background-size: cover;
+    background-position: center;
     background-size: cover;
     height: 85vh;
     @media(max-width: 780px){

@@ -73,7 +73,7 @@ const UpperDiv = () =>(
             <Grid1>
                 <UpperDivStyle>
                    <h1 className="body">We Provide World Class Services To Grow Your Business</h1>
-                   <p><a href="/contact" className="advice">Get Free Advice</a> <a href="/contact" className="contact">Contact Us</a></p>
+                   <p><a href="/advice" className="advice">Get Free Advice</a> <a href="/contact" className="contact">Contact Us</a></p>
                 </UpperDivStyle>
             </Grid1>
         </Container>
