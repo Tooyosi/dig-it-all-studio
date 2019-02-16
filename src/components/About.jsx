@@ -1,6 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Head from "../../assets/ProfilePage.png";
 import Office from "../../assets/office.jpg";
 import Profile from "../../assets/maxresdefault.jpg";
 import Team from "../../assets/team.jpg";
@@ -123,6 +124,7 @@ const Formstyle = styled.form`
 `;
 
 const UpperDivStyle = styled.div`
+  background: linear-gradient(rgba(199, 29, 46, 0.99),rgba(199, 29, 46, 0.66)),url(${Head});
   background-color: #79A73F;
   min-height: 50vh;
   margin-top: 50px;
@@ -139,7 +141,7 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -34px;
+        // margin-top: -34px;
     }
   }
 `;

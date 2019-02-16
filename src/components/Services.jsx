@@ -4,6 +4,13 @@ import Office from "../../assets/dig-it-all.svg";
 import SVG from "svg-inline-react";
 import CarouselPage from './Carosel';
 import Footer from "./Footer";
+import Service from '../../assets/ServicesPage.png';
+import Content from '../../assets/serviceContent.png';
+import Email from '../../assets/serviceEmail.png';
+import Seo from '../../assets/serviceSeo.png';
+import Design from '../../assets/serviceDesign.jpg';
+import Media from '../../assets/serviceMedia.jpeg';
+import Consult from '../../assets/homepg_our-impact.jpg';
 import Container from './Container';
 import { NavbarStyle, NavBackground, Navbar } from './Navbar';
 import { Grid2, Column, Grid, Grid5, Grid9 } from './Grid';
@@ -27,105 +34,53 @@ const ContactStyle = styled.div`
         padding: 10px;
         text-align: right;
     }
+
+    .inner-style{
+        height: 100%;
+        width: 100%;
+    }
+    .inner-style > img{
+        height: 68%;
+        // margin-bottom: -4px;
+        opacity: .6;
+    }
+    .inner-style > div {
+        padding: 8px;
+        margin-top: -4px;
+        font-size: smaller;
+        color: white;
+        text-align: center;
+        height: 32%;
+        background: linear-gradient(rgba(19, 23, 21, 0.16),rgba(19, 23, 21, 0.02));
+    }
+    }
+
+    .inner1{
+        background: linear-gradient(rgba(157, 245, 205, 0.98),rgba(157, 245, 205, 0.98));
+      }
+    .inner2{
+        background: linear-gradient(rgba(101, 82, 153, 0.55),rgba(101, 82, 153, 0.55));
+      }
+    .inner3{
+        background: linear-gradient(rgba(226, 138, 120, 0.82),rgba(226, 138, 120, 0.82));
+      }
+    .inner4{
+        background: linear-gradient(rgba(79, 105, 156, 0.84),rgba(79, 105, 156, 0.84));
+      }
+    .inner5{
+        background: linear-gradient(rgba(236, 115, 228, 0.84),rgba(236, 115, 228, 0.84));
+      }
+    .inner6{
+        background: linear-gradient(rgba(185, 85, 81, 0.84),rgba(185, 85, 81, 0.84));
+      }
     
 `;
 
-const Formstyle = styled.form`
-    min-width: 100%;
-    background-color: white;
-    padding: 40px 40px 76px 40px;
-    border: 2px dotted black;
-    box-shadow: 0px 4px 8px 2px #DEDEDE;
-    position: relative;
-    text-align: left;
-    /* padding: 24px; */
-    z-index: 5;   
-    input{
-      margin: 5px;
-      border: 0px solid transparent;
-      // border-bottom: 1px solid #FFFFFF;
-      border-radius: 2px;
-      padding: 6px;
-      height: 5vh;
-      background-color: #EFEFEF;
-      width: 350px;
-      color: white;
-    }
 
-    input:focus{
-      border-color: transparent;
-
-    }
-    ::placeholder { 
-      color: white;
-      opacity: 1; 
-    }
-
-    textarea{
-      margin: 5px;
-      border: 0px solid transparent;
-      border-radius: 2px;
-      padding: 6px;
-      background-color: #EFEFEF;
-      width: 350px;
-      height: 15vh;
-    }
-    input[type="submit"]{
-      padding: 10px 30px;
-      text-align: center;
-      border: 2px solid transparent;
-      border-radius: 22px;
-      cursor: pointer;
-      font-size: x-small;
-      background-color: #6132E4;
-      transition: 0.3s linear;
-      color: white;
-      margin-right: 70px;
-      width: 130px;
-      margin-bottom: 70px;
-      float: right;
-    }
-  
-    @media(width:640px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-
-    @media(width:768px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-
-    @media(width:600px ){
-      position: relative !important
-      z-index: 5;
-      textarea, input{
-        width: 185px;
-      }
-    }
-  @media(max-width:780px ){
-    position: inherit;
-    textarea, input{
-      width: 185px;
-    }
-  }
-  
-  @media(width:800px ){
-    position: relative;
-    textarea, input{
-      width: 250px;
-    }
-  }
-`;
 
 const UpperDivStyle = styled.div`
-  background-color: #B40B45;
+  background: linear-gradient(rgba(235, 13, 13, 0.88),rgba(108, 5, 5, 0.97)),url(${Service});
+//   background-color: #B40B45;
   min-height: 50vh;
   margin-top: 50px;
   color: white;
@@ -141,7 +96,7 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -70px;
+        // margin-top: -70px;
     }
   }
 `;
@@ -188,7 +143,7 @@ const LowerDivStyle = styled.div`
 `;
 
 const LowerDivStyle2 = styled.div`
-    background-color: #54EEA9;
+    background-color: #27253D;
     text-align: center;
     @media(max-width: 700px){
       margin-top: 0px !important;
@@ -221,30 +176,56 @@ const Services = () => (
       <Container>
           <h1>Full Service Digital Marketing Agency</h1>
           <h3>Full Service Digital Marketing Agency</h3>
-        <Grid9>
-          <Column>
-            <p>
-                We work with businesses and non profits harness the growing power and market
-                of digital marketing. Helping and working with clients to
-                deliver an increase in leads, brand awareness,
-                growing sales and support other business goals.
-            </p>
-            <p>
-                We have a great mix of clientele which includes
-                some of the world's most famous brands and
-                local SME's who operate across many sectors.
-            </p>
-            <p>
-                We work with you as a partner, this way we not only
-                deliver you great results. But also foster a lasting relationship, 
-                because it is no secret that your success is good for us too.
-
-            </p>
-          </Column>
-          <Column>
-            <SVG src={Office} alt=""/>
-          </Column>
-        </Grid9>
+            <Grid>
+                <Column>
+                    <div className="inner-style inner1">
+                        <img src={Seo} alt="" />
+                        <div>
+                            <h2>SEO and SEM</h2>
+                        </div>
+                    </div>
+                </Column>
+                <Column>
+                    <div className="inner-style inner2">
+                        <img src={Design} alt="" />
+                        <div>
+                            <h2>Web Design</h2>
+                        </div>
+                    </div>
+                </Column>
+                <Column>
+                    <div className="inner-style inner3">
+                        <img src={Consult} alt="" />
+                        <div>
+                            <h2>Consultation and Advisory Services</h2>
+                        </div>
+                    </div>
+                </Column>
+                <Column>
+                    <div className="inner-style inner4">
+                        <img src={Media} alt="" />
+                        <div>
+                            <h2>Social Media Marketing</h2>
+                        </div>
+                    </div>
+                </Column>
+                <Column>
+                    <div className="inner-style inner5">
+                        <img src={Content} alt="" />
+                        <div>
+                            <h2>Content Creation and Strategy</h2>
+                        </div>
+                    </div>
+                </Column>
+                <Column>
+                    <div className="inner-style inner6">
+                        <img src={Email} alt="" />
+                        <div>
+                            <h2>Email Marketing</h2>
+                        </div>
+                    </div>
+                </Column>
+            </Grid>
       </Container>
     </ContactStyle>
     <LowerDivStyle>

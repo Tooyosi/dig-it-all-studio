@@ -165,7 +165,8 @@ const QuestionStyle = styled.div`
 `;
 
 const LastDivStyle = styled.div`
-  background-color: #54EEA9;
+  background-color: #27253D
+  color: white;
   margin-top: -13em;
 
   @media(max-width: 700px){

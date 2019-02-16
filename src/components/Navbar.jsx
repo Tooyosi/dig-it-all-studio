@@ -202,7 +202,7 @@ export const NavbarStyle = styled.div`
 
 export const NavBackground = styled.div`
     // background: #6132E4 no-repeat center/100%;
-    background: linear-gradient(rgba(103, 60, 203, .7), rgba(103, 60, 203, .7)), url(${Home});
+    background: linear-gradient(rgba(16, 209, 39, 0.92),rgba(13, 64, 24, 0.87)),url(${Home});
     background-size: cover;
     background-position: center;
     background-size: cover;

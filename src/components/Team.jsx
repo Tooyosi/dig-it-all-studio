@@ -168,7 +168,7 @@ const UpperDivStyle = styled.div`
 `;
 
 const LowerDivStyle = styled.div`
-  background-color: #6132E4;
+  background-color: #B9B9B9;
   margin-top: -20vh;
   min-height: 40vh;
   padding: 30px;

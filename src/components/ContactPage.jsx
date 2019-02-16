@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
+import Home from '../../assets/ContactPage.png';
 import Google from "../../assets/Googlemap-600x551.jpg";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import Hands from "../../assets/hands.jpg";
@@ -130,7 +131,7 @@ const Formstyle = styled.form`
 `;
 
 const UpperDivStyle = styled.div`
-  background-color: #890CA1;
+  background: linear-gradient(rgba(11, 120, 27, 0.64),rgba(11, 120, 27, 0.64)),url(${Home});
   min-height: 50vh;
   margin-top: 50px;
   color: white;
@@ -152,7 +153,7 @@ const UpperDivStyle = styled.div`
 `;
 
 const LowerDivStyle = styled.div`
-  background-color: #32DEE4;
+  background-color: #B9B9B9;
   min-height: 20vh;
   padding: 30px;
   text-align: center;

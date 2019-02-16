@@ -167,10 +167,13 @@ const QuestionStyle = styled.div`
 `;
 
 const UpperDivStyle = styled.div`
-  background-color: #FF765D;
-//   min-height: 50vh;
+  background-color: #C9182B;
+  min-height: 50vh;
   margin-top: 50px;
   color: white;
+  h3{
+    margin-top: 70px;
+  }
   hr{
         background-color: #FD745E;
         padding: 1.5px;
@@ -188,23 +191,9 @@ const UpperDivStyle = styled.div`
   }
 `;
 
-const UpperDivStyle2 = styled.div`
-    float: right;
-    width: 50%;
-    hr{
-        background-color: #FD745E;
-        padding: 1.5px;
-        border: 2px solid transparent;
-        border-radius: 10px;
-    }
-    @media(max-width: 700px){
-        width: 100%;
-        float: left;
-    }
-`;
 
 const LowerDivStyle = styled.div`
-  background-color: #6132E4;
+  background-color: #27253D;
   margin-top: -20vh;
   min-height: 40vh;
   padding: 30px;
@@ -245,15 +234,8 @@ const Advice = () => (
                 <Column>
                     <h2>ABOUT US</h2>
                 </Column>
-            </Grid2>
-        </Container>
-    </UpperDivStyle>
-    <UpperDivStyle2>
-        <Container>
-            <Grid2></Grid2>
-            <Grid2>
                 <Column>
-                    <h2>Ask Us Anything</h2>
+                    <h3>Ask Us Anything</h3>
                     <hr/>
                     <p>Our mission is to deliver exceptional ROI to our clients. Through metric driven digital
                         marketing campaigns and beautiful responsive websites
@@ -261,7 +243,7 @@ const Advice = () => (
                 </Column>
             </Grid2>
         </Container>
-    </UpperDivStyle2>
+    </UpperDivStyle>
     <ContactStyle>
       <Container>
         <Grid2>

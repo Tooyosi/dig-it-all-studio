@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import Office from "../../assets/office.jpg";
+import Profile from "../../assets/ProfilePage.png";
 import SVG from "svg-inline-react";
 import World from "../../assets/world.svg";
 import Project from "../../assets/project.svg";
@@ -8,7 +8,7 @@ import Certificate from "../../assets/certificate.svg";
 import Footer from "./Footer";
 import Container from './Container';
 import { NavbarStyle, NavBackground, Navbar } from './Navbar';
-import { Grid8, Column, Grid7 } from './Grid';
+import {Grid2,  Grid8, Column, Grid7 } from './Grid';
 
 
 const ContactStyle = styled.div`
@@ -28,11 +28,14 @@ const ContactStyle = styled.div`
     h2{
         margin--top: 0;
     }
+    .center{
+        text-align: center;
+    }
     
 `;
 
 const UpperDivStyle = styled.div`
-  background-color: #79A73F;
+  background: linear-gradient(rgba(124, 168, 67, 0.99),rgba(124, 168, 67, 0.66)),url(${Profile});
 //   height: 50vh;
   margin-top: 50px;
   color: white;
@@ -41,6 +44,9 @@ const UpperDivStyle = styled.div`
         padding: 1.5px;
         border: 2px solid transparent;
         border-radius: 10px;
+  }
+  h3{
+      margin-top: 70px;
   }
   
   .second-h2{
@@ -114,34 +120,28 @@ const OurProfile = () => (
     <Navbar/>
     <UpperDivStyle>
         <Container>
+            <Grid2>
                 <Column>
                     <h2>ABOUT DIG-IT-ALL</h2>
                 </Column>
+                <Column>
+                  <h3>Company Profile</h3>
+                  <hr/>
+                  <p>Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam.
+                  Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam.
+                  Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit, sed do eiusmod tempor incididunt ut
+                  labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </Column>
+            </Grid2>
         </Container>
     </UpperDivStyle>
     <ContactStyle>
       <Container>
-        <Grid8>
-          <Column>
-            <img src={Office} alt=""/>
-          </Column>
-          <Column>
-            <h2>Company Profile</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam.
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
-            <p>Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut
-            Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam.</p> 
-          </Column>
           <Column>
             <p>
                 We work with businesses and non profits harness the growing power and market
@@ -149,11 +149,13 @@ const OurProfile = () => (
                 deliver an increase in leads, brand awareness,
                 growing sales and support other business goals.
             </p>
+            <br/>
             <p>
                 We have a great mix of clientele which includes
                 some of the world's most famous brands and
                 local SME's who operate across many sectors.
             </p>
+            <br/>
             <p>
                 We work with you as a partner, this way we not only
                 deliver you great results. But also foster a lasting relationship, 
@@ -161,13 +163,16 @@ const OurProfile = () => (
 
             </p>
           </Column>
-          <Column>
-            <h2>Our Mission</h2>
-            <p>To help businesses suceed through excellent digital services, focused on results</p>
-            <h2>Our Vision</h2>
-            <p>The worlds biggest digital agency</p>
-          </Column>
-        </Grid8>
+        <Grid2>
+          <Column className="center">
+                <h2>Our Mission</h2>
+                <p>To help businesses suceed through excellent digital services, focused on results</p>
+            </Column>
+            <Column className="center">
+                <h2>Our Vision</h2>
+                <p>The worlds biggest digital agency</p>
+            </Column>
+        </Grid2>
       </Container>
     </ContactStyle>
     <LowerDivStyle>

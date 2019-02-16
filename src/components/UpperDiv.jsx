@@ -49,11 +49,12 @@ const UpperDivStyle = styled.div`
     }
 
     .advice{
-        background-color: #FF765D;
+        background-color: transparent;
+        border: 2px solid white;
     }
     
     .contact{
-        background-color: #79A73F;
+        background-color: #FF765D;
     }
     @media(max-width: 600px){
         a{

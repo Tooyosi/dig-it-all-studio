@@ -146,7 +146,7 @@ const Formstyle = styled.form`
 `;
 
 const UpperDivStyle = styled.div`
-  background-color: #3A348E;
+  background-color: #C9182B;
   min-height: 50vh;
   margin-top: 50px;
   color: white;
@@ -162,14 +162,14 @@ const UpperDivStyle = styled.div`
   }
   @media(max-width: 650px){
     .second-h2{
-        margin-top: -54px;
+        // margin-top: -54px;
     }
   }
 `;
 
 
 const LowerDivStyle2 = styled.div`
-    background-color: #54EEA9;
+    background-color: #27253D;
     text-align: center;
     @media(max-width: 700px){
       margin-top: 0px !important;
