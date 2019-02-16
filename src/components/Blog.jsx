@@ -22,13 +22,15 @@ const ContactStyle = styled.div`
     p{
         font-family: serif;
         font-size: smaller;
+        padding: 0;
+        margin: 0;
     }
     label{
         padding: 10px;
         text-align: right;
     }
     .plaq{
-        padding: 43px;
+        // padding: 43px;
         height: 650px;
     }
 
@@ -48,7 +50,7 @@ const ContactStyle = styled.div`
         }
         
         .plaq{
-            margin-top: 0px;
+            margin-top: 67px;
         }
     }
 `;
@@ -157,9 +159,9 @@ const Blog = () => (
             <div className="plaq">
                 <img src={Hand} alt=""/>
                 <p>19-01-2019 | By Adubi Timmy </p>
-                <h3>Lorem ipsum dolor sit amet, consectetur
+                <h5>Lorem ipsum dolor sit amet, consectetur
                     adipiscing elit, sed 
-                </h3>
+                </h5>
                 <a href="">Read More >>></a>             
             </div>
         </Column>
@@ -167,9 +169,9 @@ const Blog = () => (
           <div className="plaq plaq2">
               <img src={Find} alt=""/>
               <p>19-01-2019 | By Adubi Timmy </p>
-              <h3>Lorem ipsum dolor sit amet, consectetur
+              <h5>Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit, sed 
-              </h3>
+              </h5>
               <a href="">Read More >>></a>             
           </div>
         </Column>
@@ -177,9 +179,9 @@ const Blog = () => (
           <div className="plaq">
               <img src={Find} alt=""/>
               <p>19-01-2019 | By Adubi Timmy </p>
-              <h3>Lorem ipsum dolor sit amet, consectetur
+              <h5>Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit, sed 
-              </h3>
+              </h5>
               <a href="">Read More >>></a>             
           </div>
         </Column>
@@ -187,9 +189,9 @@ const Blog = () => (
           <div className="plaq plaq2">
               <img src={Find} alt=""/>
               <p>19-01-2019 | By Adubi Timmy </p>
-              <h3>Lorem ipsum dolor sit amet, consectetur
+              <h5>Lorem ipsum dolor sit amet, consectetur
                   adipiscing elit, sed 
-              </h3>
+              </h5>
               <a href="">Read More >>></a>             
           </div>
         </Column>

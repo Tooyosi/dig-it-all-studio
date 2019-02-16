@@ -33,7 +33,7 @@ const LowerDivStyle = styled.div`
     border-radius: 10px;
     p{
         color: rgba(31, 33, 33, 0.97);
-        font-family: -webkit-pictograph;
+        font-family: serif;
         font-size: small;
         text-align: left;
     }

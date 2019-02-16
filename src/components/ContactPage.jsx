@@ -18,7 +18,7 @@ const ContactStyle = styled.div`
     color: black;
     padding: 30px;
     h1, h4, p{
-        font-family: -webkit-pictograph;
+        font-family: serif-;
     }
     label{
         padding: 10px;

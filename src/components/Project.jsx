@@ -1,6 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
-import Office from "../../assets/dig-it-all.svg";
+import Finance from "../../assets/finance.png";
 import SVG from "svg-inline-react";
 import CarouselPage from './Carosel';
 import Footer from "./Footer";
@@ -12,7 +12,7 @@ import { Grid2, Column, Grid, Grid5 } from './Grid';
 const ContactStyle = styled.div`
     background-color: white;
     margin-top: 0px;
-    text-align: left;
+    text-align: center;
     color: black;
     padding: 30px;
     h1, h4, p{
@@ -45,12 +45,25 @@ const ContactStyle = styled.div`
       text-align: left;
     }
   }
+
+  .help{
+    margin: 20px;
+    text-align: left;
+  }
+  .help > h2{
+    text-align: center;
+  }
+
+  img{
+    width: 200px;
+    height: 170px;
+  }
 `;
 
 const Formstyle = styled.form`
     width: 100%;
     background-color: #D6D6D6;
-    padding: 60px;
+    padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 8px 2px #DEDEDE; 
     position: relative;
@@ -91,7 +104,6 @@ const Formstyle = styled.form`
       height: 15vh;
     }
     input[type="submit"]{
-      padding: 10px 30px;
       text-align: center;
       border: 2px solid transparent;
       border-radius: 22px;
@@ -102,15 +114,14 @@ const Formstyle = styled.form`
       color: white;
       margin-right: 70px;
       width: 130px;
-      margin-bottom: 70px;
-      float: right;
+      // float: right;
     }
   
     @media(width:640px ){
       position: relative !important
       z-index: 5;
       textarea, input, select{
-        width: 185px;
+        width: 100px;
       }
     }
 
@@ -118,7 +129,7 @@ const Formstyle = styled.form`
       position: relative !important
       z-index: 5;
       textarea, input, select{
-        width: 185px;
+        width: 100px;
       }
     }
 
@@ -126,14 +137,14 @@ const Formstyle = styled.form`
       position: relative !important
       z-index: 5;
       textarea, input, select{
-        width: 185px;
+        width: 100px;
       }
     }
   @media(max-width:780px ){
     margin-top: 5px;
     position: inherit;
     textarea, input, select{
-      width: 185px;
+      width: 100px;
     }
   }
   
@@ -225,13 +236,14 @@ const Project = () => (
                   {/* <p>{this.state.successMessage}</p> */}
               </Formstyle>            
           </Column>
-          </Grid2>
-          <Grid2>
           <Column>
-            <h2>We're are to Help</h2>
-            <p>Talk to us and learn how strategic website design and digital marketing can help you
-                increase your sales and overall brand value.
-            </p>
+            <img src={Finance} alt=""/>
+            <div className="help">
+              <h2>We're are to Help</h2>
+              <p>Talk to us and learn how strategic website design and digital marketing can help you
+                  increase your sales and overall brand value.
+              </p>
+            </div>
           </Column>
         </Grid2>
       </Container>
