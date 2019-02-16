@@ -77,7 +77,6 @@ const Formstyle = styled.form`
       height: 15vh;
     }
     input[type="submit"]{
-      padding: 10px 30px;
       text-align: center;
       border: 2px solid transparent;
       border-radius: 22px;
@@ -88,23 +87,21 @@ const Formstyle = styled.form`
       color: white;
       margin-right: 70px;
       width: 130px;
-      margin-bottom: 70px;
-      float: right;
     }
   
     @media(width:640px ){
-      position: relative !important
-      z-index: 5;
+      padding: 20px;
+      position: inherit;
       textarea, input{
-        width: 185px;
+        width: 157px;
       }
     }
 
     @media(width:768px ){
-      position: relative !important
-      z-index: 5;
+      padding: 20px;
+      position: inherit;
       textarea, input{
-        width: 185px;
+        width: 157px;
       }
     }
 
@@ -112,13 +109,14 @@ const Formstyle = styled.form`
       position: relative !important
       z-index: 5;
       textarea, input{
-        width: 185px;
+        width: 157px;
       }
     }
   @media(max-width:780px ){
+    padding: 20px;
     position: inherit;
     textarea, input{
-      width: 185px;
+      width: 157px;
     }
   }
   
@@ -131,7 +129,7 @@ const Formstyle = styled.form`
 `;
 
 const UpperDivStyle = styled.div`
-  background: linear-gradient(rgba(11, 120, 27, 0.64),rgba(11, 120, 27, 0.64)),url(${Home});
+  background: linear-gradient(rgba(109, 115, 21, 0.64),rgba(109, 115, 21, 0.64)),url(${Home});
   min-height: 50vh;
   margin-top: 50px;
   color: white;
@@ -170,7 +168,6 @@ const LowerDivStyle = styled.div`
   p{
     position: relative;
     bottom: 15vh;
-    font-size: 20px;
     color: white;
   }
 
@@ -189,6 +186,7 @@ const LowerDivStyle = styled.div`
    }
 
   @media(max-width: 600px){
+      padding: 0px;
       img{
           width: 100%;
       }

@@ -43,7 +43,7 @@ const UpperDivStyle = styled.div`
         cursor: pointer;
         font-size: x-small;
         background-color: #077eb8;
-        transition: 0.3s linear;
+        transition: 0.5s cubic-bezier(0.47, 0, 0.75, 0.72);
         color: white;
         margin-right: 70px;
     }
@@ -51,6 +51,9 @@ const UpperDivStyle = styled.div`
     .advice{
         background-color: transparent;
         border: 2px solid white;
+    }
+    .advice: hover{
+        background-color: green;
     }
     
     .contact{

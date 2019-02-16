@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Home from '../../assets/Homepage.png';
+import Container from './Container';
 import SVG from "svg-inline-react";
 import Logo from "../../assets/dig-it-all.svg";
 
@@ -12,6 +13,7 @@ export const NavbarStyle = styled.div`
     position: fixed;
     z-index: 10;
     top: 0%;
+    left: 0%;
     height: 7vh;
     box-shadow: 1px 2px 3px #e5e9ea;
     @media(max-width: 700px){
@@ -31,6 +33,7 @@ export const NavbarStyle = styled.div`
         }
         .collapsible-menu a {
             display:block;
+            color: black;
             padding: 10px;
             text-decoration: none;
         }
@@ -63,7 +66,6 @@ export const NavbarStyle = styled.div`
             max-height: 0;
             overflow: hidden;
             font-family: 'Oswald', sans-serif; 
-            padding: 0 0 0 50px;
         }
         /* Toggle Effect */
         input:checked ~ .menu-content {
@@ -124,7 +126,6 @@ export const NavbarStyle = styled.div`
 
     .menu-content {
         font-family: 'Oswald', sans-serif; 
-        padding: 0 0 0 50px;
     }
 
     .menu-content ul {
@@ -135,9 +136,15 @@ export const NavbarStyle = styled.div`
 
     }
 
-    @media(min-width:1000px){
+    @media(min-width:1001px){
         .menu-content ul{
-            left: 70vh;
+            left: 100vh;
+        }  
+    }
+
+    @media(max-width:1000px){
+        .menu-content ul{
+            left: 60vh;
         }  
     }
     @media(max-width:855px){
@@ -157,10 +164,17 @@ export const NavbarStyle = styled.div`
             left: 19vh;
         }  
     }
+    @media(min-width:768px){
+        .menu-content > ul >li:hover{
+            border-bottom: 2px solid #EE4223;
+        
+        }
+    }
 
-    @media(width:1440px){
+
+    @media(min-width:1440px){
         .menu-content ul{
-            left: 86vh;
+            left: 80vh;
         }  
     }
 
@@ -174,13 +188,17 @@ export const NavbarStyle = styled.div`
 
     .menu-content > ul >li {
         display: inline;
-        margin: 0 10px;
-
+        padding: 17px;
+        transition: .3s linear;
+        border: 0px solid #EE4223;
     }
     .menu-content > ul >li>a{
         cursor: pointer;
-        color: #0a0b0c; 
-        opacity: 0.5;
+        color: black;
+        font-family: sans-serif;
+        font-family: sans-serif;
+        font-size: smaller;
+        font-weight: 700; 
     }
 
     .menu-content > ul >li>a:hover {
@@ -224,26 +242,28 @@ export const NavBrand = styled.div`
 
 export const Navbar = () => (
     <Fragment>
-        <NavbarStyle className="nav-style">
-            <span class="collapsible-menu">
-                <SVG className="nav-brand" src={Logo} />
-                <input type="checkbox" id="menu" />
-                <label for="menu">
-                    <span className='icon-bar'></span>
-                    <span className='icon-bar'></span>
-                    <span className='icon-bar'></span>
-                </label>
-                <div class="menu-content">
-                    <ul>
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/services">Our Services</Link></li>
-                        <li><Link to="/about">About Us</Link></li>
-                        <li><Link to="/project">Projects</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
-                        <li><Link to="/blog">Blog</Link></li>
-                     </ul>
-                 </div>
-            </span>
-        </NavbarStyle>
+        <Container>
+            <NavbarStyle className="nav-style">
+                <span class="collapsible-menu">
+                    <SVG className="nav-brand" src={Logo} />
+                    <input type="checkbox" id="menu" />
+                    <label for="menu">
+                        <span className='icon-bar'></span>
+                        <span className='icon-bar'></span>
+                        <span className='icon-bar'></span>
+                    </label>
+                    <div class="menu-content">
+                        <ul>
+                            <li><Link to="/">Home </Link></li>
+                            <li><Link to="/services">Our Services</Link></li>
+                            <li><Link to="/about">About Us</Link></li>
+                            <li><Link to="/project">Projects</Link></li>
+                            <li><Link to="/contact">Contact</Link></li>
+                            <li><Link to="/blog">Blog</Link></li>
+                         </ul>
+                     </div>
+                </span>
+            </NavbarStyle>
+        </Container>
     </Fragment>
 )
