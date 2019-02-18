@@ -244,15 +244,15 @@ export const Navbar = () => (
     <Fragment>
         <Container>
             <NavbarStyle className="nav-style">
-                <span class="collapsible-menu">
+                <span className="collapsible-menu">
                     <SVG className="nav-brand" src={Logo} />
                     <input type="checkbox" id="menu" />
-                    <label for="menu">
+                    <label htmlFor="menu">
                         <span className='icon-bar'></span>
                         <span className='icon-bar'></span>
                         <span className='icon-bar'></span>
                     </label>
-                    <div class="menu-content">
+                    <div className="menu-content">
                         <ul>
                             <li><Link to="/">Home </Link></li>
                             <li><Link to="/services">Our Services</Link></li>

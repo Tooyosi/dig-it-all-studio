@@ -1,5 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
+import axios from 'axios'
 import Home from '../../assets/ContactPage.png';
 import Google from "../../assets/Googlemap-600x551.jpg";
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
@@ -199,77 +200,92 @@ const LowerDivStyle = styled.div`
 
 
 class ContactPage extends Component {
-    constructor() {
-      super();
-      this.state = { 
-          formName: '', 
-          formEmail: '',
-          formSubject: '',
-          formMessage: '', 
-          successMessage: ''
-      };
-      this.sendMail = this.sendMail.bind(this);
-      this.inputName = this.inputName.bind(this);
-      this.inputEmail = this.inputEmail.bind(this);
-      this.inputSubject = this.inputSubject.bind(this);
-      this.inputMessage = this.inputMessage.bind(this);
-      this.buttonClick = this.buttonClick.bind(this);
-      this.successOutput = this.successOutput.bind(this);
-    }
-    sendMail(event) {
-        event.preventDefault()
-      axios({
-        method: 'post',
-        url: `https://dig-it-all.herokuapp.com/api/email`,
-        data: {
-            name:   this.state.formName,
-            email: this.state.formEmail,
-            subject: this.state.formSubject,
-            message: this.state.formMessage
-        }
-      }).then(response => {
-        console.log(response);
-        response.json().then((result)=>this.setState({ successMessage: result}))
-      }).then(data => {if(data.status ===200) return alert("sent")} )
-      .catch(error => {
-        console.log(error);
-      });
-    }
-    inputName(event) { 
-      this.setState({
-        formName: event.target.value,
-      })
-    }
-    inputEmail(event) {
-      this.setState({
-        formEmail: event.target.value,
-      })
-    }
-    inputSubject(event) {
-      this.setState({
-        formSubject: event.target.value,
-      })
-    }
-    inputMessage(event) {
-      this.setState({
-        formMessage: event.target.value,
-      })
-    }
-    successOutput(event) {
-      if(this.state.formMessage === " "){
-        this.setState({
-        successMessage: " ",
-        })
-      } else{
-        this.setState({
-          successMessage: "Your Mail Has been sent successfully",
-        })
+  constructor() {
+    super();
+    this.state = {
+        formName: '',
+        formEmail: '',
+        formSubject: '',
+        formMessage: '', 
+        successMessage: ''
+    };
+    this.sendMail = this.sendMail.bind(this);
+    this.inputName = this.inputName.bind(this);
+    this.inputEmail = this.inputEmail.bind(this);
+    this.inputSubject = this.inputSubject.bind(this);
+    this.inputMessage = this.inputMessage.bind(this);
+  }
+  sendMail(event) {
+      event.preventDefault()
+    axios({
+      method: 'post',
+      url: `https://dig-it-all.herokuapp.com/api/email`,
+      headers: {
+        "Access-Control-Allow-Origin": "http://localhost:8080",              
+        "Content-type": "application/json",
+        "accept": "application/json"
+      },
+      data: {
+          name:   this.state.formName,
+          email: this.state.formEmail,
+          subject: this.state.formSubject,
+          message: this.state.formMessage
       }
-      new FormData();
-    }
-    buttonClick(event) {
-      this.successOutput();
-    }
+    }).then((data) => {
+      if(data.status == 200){
+          // return alert("sent")
+          console.log("Success")
+          console.log(data)
+          return this.setState({
+            formName: '',
+            formEmail: '',
+            formSubject: '',
+            formMessage: '',
+            successMessage: "Your Mail Has been sent successfully"
+          })
+        }else{
+          console.log(data)
+          console.log("failed")
+          return this.setState({
+            formName: '',
+            formEmail: '',
+            formSubject: '',
+            formMessage: '',
+            successMessage: "An error Occured"
+          })
+        }
+      }
+        ).catch(error => {
+      console.log(error);
+      this.setState({
+        formName: '',
+        formEmail: '',
+        formSubject: '',
+        formMessage: '',
+        successMessage: "A Server Error Occured"
+      })
+    });
+  }
+  inputName(event) { 
+    this.setState({
+      formName: event.target.value,
+    })
+  }
+  inputEmail(event) {
+    this.setState({
+      formEmail: event.target.value,
+    })
+  }
+  inputSubject(event) {
+    this.setState({
+      formSubject: event.target.value,
+    })
+  }
+  inputMessage(event) {
+    this.setState({
+      formMessage: event.target.value,
+    })
+  }
     render() {
       return (
           
@@ -296,10 +312,10 @@ class ContactPage extends Component {
               <Formstyle onSubmit={this.sendMail}> 
                   <h3>How Can We Help You?</h3>
                   <p>Do you have a question or are you interested in working with us? Just fill out the form field below.</p>  
-                  <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)" />
-                  <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email" />
-                  <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
-                  <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="Message(required)"></textarea>
+                  <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)"value={this.state.formName} />
+                  <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email" value={this.state.formEmail}/>
+                  <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" value={this.state.formSubject}/>
+                  <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="Message(required)" value={this.state.formMessage}></textarea>
                   <input type="submit" value="Send" onClick={this.buttonClick} />
                   <p>{this.state.successMessage}</p>
               </Formstyle>

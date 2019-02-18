@@ -189,26 +189,56 @@ export class Form extends Component {
       this.inputEmail = this.inputEmail.bind(this);
       this.inputSubject = this.inputSubject.bind(this);
       this.inputMessage = this.inputMessage.bind(this);
-      this.buttonClick = this.buttonClick.bind(this);
-      this.successOutput = this.successOutput.bind(this);
     }
     sendMail(event) {
         event.preventDefault()
       axios({
         method: 'post',
         url: `https://dig-it-all.herokuapp.com/api/email`,
+        headers: {
+          "Access-Control-Allow-Origin": "http://localhost:8080",              
+          "Content-type": "application/json",
+          "accept": "application/json"
+        },
         data: {
             name:   this.state.formName,
             email: this.state.formEmail,
             subject: this.state.formSubject,
             message: this.state.formMessage
         }
-      }).then(response => {
-        console.log(response);
-        response.json().then((result)=>this.setState({ successMessage: result}))
-      }).then(data => {if(data.status ===200) return alert("sent")} )
-      .catch(error => {
+      }).then((data) => {
+        if(data.status == 200){
+            // return alert("sent")
+            console.log("Success")
+            console.log(data)
+            return this.setState({
+              formName: '',
+              formEmail: '',
+              formSubject: '',
+              formMessage: '',
+              successMessage: "Your Mail Has been sent successfully"
+            })
+          }else{
+            console.log(data)
+            console.log("failed")
+            return this.setState({
+              formName: '',
+              formEmail: '',
+              formSubject: '',
+              formMessage: '',
+              successMessage: "An error Occured"
+            })
+          }
+        }
+          ).catch(error => {
         console.log(error);
+        this.setState({
+          formName: '',
+          formEmail: '',
+          formSubject: '',
+          formMessage: '',
+          successMessage: "A Server Error Occured"
+        })
       });
     }
     inputName(event) { 
@@ -231,21 +261,6 @@ export class Form extends Component {
         formMessage: event.target.value,
       })
     }
-    successOutput(event) {
-      if(this.state.formMessage === " "){
-        this.setState({
-        successMessage: " ",
-        })
-      } else{
-        this.setState({
-          successMessage: "Your Mail Has been sent successfully",
-        })
-      }
-      new FormData();
-    }
-    buttonClick(event) {
-      this.successOutput();
-    }
     render() {
       return (
           
@@ -259,11 +274,11 @@ export class Form extends Component {
         <Grid2>
           <Column>
               <Formstyle onSubmit={this.sendMail}>   
-                  <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)" />
-                  <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email" />
-                  <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject" />
-                  <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="Message(required)"></textarea>
-                  <input type="submit" value="Send" onClick={this.buttonClick} />
+                  <input onChange={this.inputName} type="text" name="name" required placeholder="Name(required)" value={this.state.formName} />
+                  <input onChange={this.inputEmail} type="email" name="email" required placeholder="Your email"  value={this.state.formEmail}/>
+                  <input onChange={this.inputSubject} type="text" name="subject" required placeholder="Subject"  value={this.state.formSubject}/>
+                  <textarea onChange={this.inputMessage} name="message" id="" cols="30" rows="10" required placeholder="Message(required)" value={this.state.formMessage}></textarea>
+                  <input type="submit" value="Send" />
                   <p>{this.state.successMessage}</p>
               </Formstyle>
               <QuestionStyle>
