@@ -145,6 +145,7 @@ const LowerDivStyle = styled.div`
 const LowerDivStyle2 = styled.div`
     background-color: #27253D;
     text-align: center;
+    color: white;
     @media(max-width: 700px){
       margin-top: 0px !important;
     }
