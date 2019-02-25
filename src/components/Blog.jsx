@@ -46,7 +46,7 @@ const ContactStyle = styled.div`
     
     @media( max-width: 700px){
         .plaq{
-            height: 200px;
+            height: 250px;
         }
         
         .plaq{

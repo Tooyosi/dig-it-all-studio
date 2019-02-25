@@ -31,6 +31,7 @@ const LowerDivStyle = styled.div`
     background-color: white;
     transition: 0.3s linear;
     border-radius: 10px;
+    line-height: 25px;
     p{
         color: rgba(31, 33, 33, 0.97);
         font-family: serif;
@@ -80,8 +81,9 @@ const UpperDivStyle = styled.div`
     background-color: #bbbbba;
     color: white;
     h2, p, li{
-        font-weight: 100;
-        font-family: monospace;
+        font-weight: 300;
+        font-family: serif;
+        line-height: 30px;
     }
     li{
         margin-bottom: 20px;
