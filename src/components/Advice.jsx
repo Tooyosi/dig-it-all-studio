@@ -188,13 +188,15 @@ const UpperDivStyle = styled.div`
     .second-h2{
         margin-top: -34px;
     }
+    h3{
+      margin-top: 3px;
+    }
   }
 `;
 
 
 const LowerDivStyle = styled.div`
   background-color: #27253D;
-  margin-top: -20vh;
   min-height: 40vh;
   padding: 30px;
   color: white;
