@@ -16,7 +16,7 @@ export const NavbarStyle = styled.div`
     left: 0%;
     height: 7vh;
     box-shadow: 1px 2px 3px #e5e9ea;
-    @media(max-width: 700px){
+    @media(max-width: 800px){
         .menu-content {
             font-family: 'Oswald', sans-serif; 
             padding: 0 0 0 50px;
@@ -39,8 +39,8 @@ export const NavbarStyle = styled.div`
         }
         .collapsible-menu label {
             font-family: 'Sedgwick Ave Display', cursive;
-            min-height: 6.2vh;
-            width: 5px;
+            height: auto;
+            width: auto;
             font-size: 56px;
             display: block;
             position: absolute;
@@ -49,7 +49,7 @@ export const NavbarStyle = styled.div`
             cursor: pointer;
             background-size: 35px 50px;
             margin-left: 70%;
-            padding: 0px 0 10px 50px;
+            padding: 0px 0 0px 50px;
             border: 3px solid #f0f0f0;
             border-radius: 5px;
             box-shadow: 1px 2px 3px rgba(0,0,0,0.2);
@@ -69,10 +69,11 @@ export const NavbarStyle = styled.div`
         }
         /* Toggle Effect */
         input:checked ~ .menu-content {
-            max-height: 100%;
+            min-height: 70%;
+            opacity: 1;
             background-color: white;
-            width: 100vh;
-            position: relative;
+            width: 105vw;
+            position: fixed;
             left: -5%;
             margin-top: 39px;
         }
@@ -80,12 +81,17 @@ export const NavbarStyle = styled.div`
             position: relative;
             left: -5%;            
         }
+
+        .menu-content {
+            opacity: 0;
+        }
+
+        .menu-content > ul >li {
+            padding: 0px !important;
+        }
         
     }
     @media(max-width: 320px){
-        .collapsible-menu label {
-            height: 7vh;
-        }
         .icon-bar{
             display: block;
             background-color: #888888;
@@ -96,11 +102,6 @@ export const NavbarStyle = styled.div`
         }
     }
     
-    @media(width: 600px){
-        .collapsible-menu label {
-            height: 5vh;
-        }
-    }
 
     @media(width: 1024px){
         .menu-content ul{
@@ -110,7 +111,6 @@ export const NavbarStyle = styled.div`
 
     @media(width: 640px){
         .collapsible-menu label {
-            height: 13vh;
             margin-top: -13px;
             left: 14%;
         }
@@ -125,7 +125,8 @@ export const NavbarStyle = styled.div`
     }
 
     .menu-content {
-        font-family: 'Oswald', sans-serif; 
+        font-family: 'Oswald', sans-serif;
+        transition: .2s cubic-bezier(0.39, 0.58, 0.57, 1); 
     }
 
     .menu-content ul {
